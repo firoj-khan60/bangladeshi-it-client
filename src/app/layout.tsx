@@ -6,6 +6,8 @@ import { ThemeProvider } from "@/providers/ThemeProvider";
 import { Toaster } from "@/components/ui/sonner";
 import FloatingChatbot from "@/components/modules/Chatbot/FloatingChatbot";
 import SmoothScroll from "@/components/shared/SmoothScroll";
+import MaintenanceBanner from "@/components/shared/MaintenanceBanner";
+import { MAINTENANCE_MODE } from "@/config/maintenance";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,13 +50,17 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <QueryProviders>
-            <SmoothScroll>
-              {children}
-              <FloatingChatbot />
-              <Toaster richColors position="top-right" />
-            </SmoothScroll>
-          </QueryProviders>
+          {MAINTENANCE_MODE ? (
+            <MaintenanceBanner />
+          ) : (
+            <QueryProviders>
+              <SmoothScroll>
+                {children}
+                <FloatingChatbot />
+                <Toaster richColors position="top-right" />
+              </SmoothScroll>
+            </QueryProviders>
+          )}
         </ThemeProvider>
       </body>
     </html>
