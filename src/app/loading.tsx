@@ -4,10 +4,10 @@ import React from 'react';
 
 export default function Loading() {
   return (
-    <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-white">
+    <div className="fixed inset-0 z-9999 flex flex-col items-center justify-center bg-white">
       {/* Soft Ambient Background Elements */}
       <div className="absolute top-[-5%] left-[-5%] w-[45%] h-[45%] bg-primary/5 rounded-full blur-[100px] animate-pulse" />
-      <div className="absolute bottom-[-5%] right-[-5%] w-[45%] h-[45%] bg-purple-500/5 rounded-full blur-[100px] animate-pulse delay-1000" />
+      <div className="absolute bottom-[-5%] right-[-5%] w-[45%] h-[45%] bg-primary/10 rounded-full blur-[100px] animate-pulse delay-1000" />
       
       <div className="relative flex flex-col items-center">
         {/* Modern Minimalist Loader */}
@@ -17,7 +17,7 @@ export default function Loading() {
           
           {/* Animated Spinner Sections */}
           <div className="absolute inset-0 border-t-[3px] border-primary rounded-full animate-spin duration-[1.2s] shadow-[0_-4px_10px_rgba(59,130,246,0.2)]" />
-          <div className="absolute inset-3 border-b-[3px] border-purple-500 rounded-full animate-spin-reverse duration-[1s]" />
+          <div className="absolute inset-3 border-b-[3px] border-primary/50 rounded-full animate-spin-reverse duration-1000" />
           
           {/* Pulsing Core */}
           <div className="absolute inset-0 m-auto w-2 h-2 bg-primary rounded-full shadow-[0_0_15px_rgba(59,130,246,0.6)] animate-pulse" />
@@ -26,8 +26,8 @@ export default function Loading() {
         {/* Brand & Status */}
         <div className="text-center space-y-4">
           <div className="flex items-center justify-center gap-1.5">
-            <span className="text-2xl font-black text-slate-900 tracking-tight uppercase">Next</span>
-            <span className="text-2xl font-black bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent tracking-tight uppercase">Bazar</span>
+            <span className="text-2xl font-black text-slate-900 tracking-tight uppercase">Bangladeshi</span>
+            <span className="text-2xl font-black bg-linear-to-r from-primary to-primary/60 bg-clip-text text-transparent tracking-tight uppercase">IT</span>
           </div>
           
           <div className="flex items-center justify-center gap-1">
@@ -43,7 +43,7 @@ export default function Loading() {
 
       {/* Progress Line */}
       <div className="mt-12 w-48 h-1 bg-slate-50 rounded-full overflow-hidden">
-        <div className="h-full bg-gradient-to-r from-primary to-purple-500 w-1/3 rounded-full animate-shimmer" />
+        <div className="h-full bg-linear-to-r from-primary to-primary/50 w-1/3 rounded-full animate-shimmer" />
       </div>
 
       {/* Modern CSS Animations */}

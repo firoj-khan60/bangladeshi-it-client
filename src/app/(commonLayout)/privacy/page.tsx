@@ -6,7 +6,6 @@ import {
   Settings,
   Trash2,
   Mail,
-  Check,
   AlertTriangle
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -53,8 +52,8 @@ export default function PrivacyPage() {
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
       {/* Hero Header */}
       <section className="relative py-20 bg-white dark:bg-slate-900/40 border-b border-slate-100 dark:border-slate-800 overflow-hidden">
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] -translate-y-1/2 -translate-x-1/4" />
-        <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-purple-500/5 rounded-full blur-[80px] translate-y-1/3 translate-x-1/3" />
+        <div className="absolute top-0 left-0 w-125 h-125 bg-primary/5 rounded-full blur-[100px] -translate-y-1/2 -translate-x-1/4" />
+        <div className="absolute bottom-0 right-0 w-75 h-75 bg-primary/10 rounded-full blur-[80px] translate-y-1/3 translate-x-1/3" />
         
         <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
           <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full mb-6">

@@ -68,7 +68,7 @@ const Navbar = ({ userInfo, className, siteSettings }: NavbarProps) => {
   return (
     <section
       className={cn(
-        "sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60 transition-all duration-300",
+        "sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-xl supports-backdrop-filter:bg-background/60 transition-all duration-300",
         className,
       )}
     >
@@ -132,7 +132,7 @@ const Navbar = ({ userInfo, className, siteSettings }: NavbarProps) => {
                         className="h-full w-full object-cover"
                       />
                     ) : (
-                      <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary to-primary/60 text-sm font-bold text-primary-foreground">
+                      <div className="flex h-full w-full items-center justify-center bg-linear-to-br from-primary to-primary/60 text-sm font-bold text-primary-foreground">
                         {userInfo.name.charAt(0).toUpperCase()}
                       </div>
                     )}
@@ -152,7 +152,7 @@ const Navbar = ({ userInfo, className, siteSettings }: NavbarProps) => {
                         <p className="text-sm font-semibold leading-none">
                           {userInfo.name}
                         </p>
-                        <p className="text-xs leading-none text-muted-foreground truncate max-w-[150px]">
+                        <p className="text-xs leading-none text-muted-foreground truncate max-w-37.5">
                           {userInfo.email}
                         </p>
                       </div>
@@ -229,7 +229,7 @@ const Navbar = ({ userInfo, className, siteSettings }: NavbarProps) => {
               </SheetTrigger>
               <SheetContent
                 side="right"
-                className="w-full sm:w-[400px] border-l-0 p-0"
+                className="w-full sm:w-100 border-l-0 p-0"
               >
                 <div className="flex flex-col h-full bg-background">
                   <SheetHeader className="p-6 border-b text-left">

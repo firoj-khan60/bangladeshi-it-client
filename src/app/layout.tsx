@@ -7,6 +7,7 @@ import { Toaster } from "@/components/ui/sonner";
 import FloatingChatbot from "@/components/modules/Chatbot/FloatingChatbot";
 import SmoothScroll from "@/components/shared/SmoothScroll";
 import MaintenanceBanner from "@/components/shared/MaintenanceBanner";
+import IntroPreloader from "@/components/shared/IntroPreloader";
 import { MAINTENANCE_MODE } from "@/config/maintenance";
 
 const geistSans = Geist({
@@ -46,7 +47,7 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
@@ -54,6 +55,7 @@ export default function RootLayout({
             <MaintenanceBanner />
           ) : (
             <QueryProviders>
+              <IntroPreloader />
               <SmoothScroll>
                 {children}
                 <FloatingChatbot />
