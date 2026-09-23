@@ -14,7 +14,9 @@ import gsap from "gsap";
  * navigations inside the same visit never replay it.
  */
 
-const SESSION_KEY = "bit_intro_played";
+export const SESSION_KEY = "bit_intro_played";
+/** Fired on window once the splash has faded out, so page entrances can follow it. */
+export const INTRO_DONE_EVENT = "bit:intro-done";
 
 const GREEN = "14,110,90"; // brand green sampled from the logo mark
 const GREEN_LIGHT = "60,150,120";
@@ -106,6 +108,7 @@ export default function IntroPreloader() {
       document.body.style.overflow = prevOverflow;
       sessionStorage.setItem(SESSION_KEY, "1");
       setVisible(false);
+      window.dispatchEvent(new Event(INTRO_DONE_EVENT));
     };
 
     if (prefersReducedMotion) {

@@ -1,6 +1,8 @@
-import { Star } from "lucide-react";
+import { Star, Quote } from "lucide-react";
 import Image from "next/image";
 import SectionHeading from "@/components/shared/SectionHeading";
+import Reveal from "@/components/shared/motion/Reveal";
+import TiltCard from "@/components/shared/motion/TiltCard";
 
 const testimonials = [
   {
@@ -31,50 +33,43 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-10">
-      <SectionHeading
-        eyebrow="Testimonials"
-        title="What Our Clients Say"
-        subtitle="Hear from the businesses we've built software for."
-        className="mb-16"
-      />
+    <section className="relative overflow-hidden bg-muted/50 py-20 md:py-28">
+      <div className="absolute bottom-0 right-0 h-[420px] w-[420px] translate-x-1/3 translate-y-1/3 rounded-full bg-brand-blue/10 blur-[130px]" aria-hidden />
+      <div className="container relative mx-auto px-6">
+        <SectionHeading
+          eyebrow="Testimonials"
+          title="What Our Clients Say"
+          subtitle="Hear from the businesses we've built software for."
+          className="mb-16"
+        />
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {testimonials.map((t, i) => (
-          <div
-            key={i}
-            className="p-8 rounded-2xl bg-white border border-slate-100 shadow-xl shadow-slate-200/20 flex flex-col h-full hover:-translate-y-2 transition-transform duration-300"
-          >
-            <div className="flex gap-1 mb-6">
-              {[...Array(5)].map((_, index) => (
-                <Star
-                  key={index}
-                  className={`h-4 w-4 ${index < t.rating ? "text-amber-400 fill-amber-400" : "text-slate-200"}`}
-                />
-              ))}
+        <Reveal className="grid grid-cols-1 gap-6 md:grid-cols-3" stagger={0.1}>
+          {testimonials.map((t) => (
+            <div key={t.name} data-reveal className="h-full">
+              <TiltCard max={5} className="flex flex-col rounded-2xl border border-border bg-card p-8 shadow-sm transition-shadow hover:shadow-xl">
+                <Quote className="h-8 w-8 text-primary/40" aria-hidden />
+                <div className="mt-4 flex gap-1" aria-label={`${t.rating} out of 5 stars`}>
+                  {[...Array(5)].map((_, index) => (
+                    <Star
+                      key={index}
+                      className={`h-4 w-4 ${index < t.rating ? "fill-amber-400 text-amber-400" : "text-muted-foreground/30"}`}
+                    />
+                  ))}
+                </div>
+                <p className="mt-5 flex-1 leading-relaxed text-foreground/85">{t.content}</p>
+                <div className="mt-8 flex items-center gap-4 border-t border-border pt-6">
+                  <div className="relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-primary/30">
+                    <Image src={t.avatar} alt={t.name} fill sizes="48px" className="object-cover" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-black text-foreground">{t.name}</h4>
+                    <p className="text-xs font-semibold text-muted-foreground">{t.role}</p>
+                  </div>
+                </div>
+              </TiltCard>
             </div>
-            <p className="text-slate-600 font-medium leading-relaxed mb-8 flex-1 italic">
-              &quot;{t.content}&quot;
-            </p>
-            <div className="flex items-center gap-4 pt-6 border-t border-slate-50">
-              <div className="relative h-12 w-12 rounded-full overflow-hidden border-2 border-primary/20">
-                <Image
-                  src={t.avatar}
-                  alt={t.name}
-                  fill
-                  sizes="48px"
-                  className="object-cover"
-                />
-              </div>
-              <div>
-                <h4 className="font-black text-slate-900 text-sm">{t.name}</h4>
-                <p className="text-primary font-bold text-[10px] uppercase tracking-widest">
-                  {t.role}
-                </p>
-              </div>
-            </div>
-          </div>
-        ))}
+          ))}
+        </Reveal>
       </div>
     </section>
   );
