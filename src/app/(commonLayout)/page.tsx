@@ -1,21 +1,31 @@
-import HeroCarousel from "@/components/modules/Home/HeroCarousel";
-import Features from "@/components/modules/Home/Features";
-import MarketplaceStats from "@/components/modules/Home/MarketplaceStats";
+import HeroSection from "@/components/modules/Home/HeroSection";
+import AboutSection from "@/components/modules/Home/AboutSection";
+import TrustMarquee from "@/components/modules/Home/TrustMarquee";
+import ServicesGrid from "@/components/modules/Home/ServicesGrid";
+import EcommerceShowcase from "@/components/modules/Home/EcommerceShowcase";
+import SolutionsSection from "@/components/modules/Home/SolutionsSection";
+import WhyUs from "@/components/modules/Home/WhyUs";
+import ProcessSection from "@/components/modules/Home/ProcessSection";
 import Testimonials from "@/components/modules/Home/Testimonials";
 import FaqSection from "@/components/modules/Home/FaqSection";
-import Newsletter from "@/components/modules/Home/Newsletter";
+import CtaSection from "@/components/modules/Home/CtaSection";
 
 export default function HomePage() {
+  // overflow-x-clip (not hidden): `hidden` makes this a scroll container,
+  // which breaks position:sticky in the services stack.
   return (
-    <div className="min-h-screen flex flex-col bg-background overflow-x-hidden">
-      <main className="w-full max-w-[1440px] mx-auto p-4 md:p-6 lg:p-8 space-y-6 md:space-y-8 lg:space-y-10">
-        <HeroCarousel />
-        <Features />
-        <MarketplaceStats />
-        <Testimonials />
-        <FaqSection />
-        <Newsletter />
-      </main>
+    <div className="flex flex-col overflow-x-clip bg-background">
+      <HeroSection />
+      <AboutSection />
+      <TrustMarquee />
+      <ServicesGrid />
+      <EcommerceShowcase />
+      <SolutionsSection />
+      <WhyUs />
+      <ProcessSection />
+      <Testimonials />
+      <FaqSection />
+      <CtaSection />
     </div>
   );
 }
