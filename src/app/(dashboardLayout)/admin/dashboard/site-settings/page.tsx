@@ -131,7 +131,7 @@ export default function SiteSettingsPage() {
   if (isLoading) {
     return (
       <div className="flex h-[400px] items-center justify-center">
-        <Loader2 className="h-8 w-8 animate-spin text-primary" />
+        <Loader2 className="h-8 w-8 animate-spin text-highlight" />
       </div>
     );
   }
@@ -150,7 +150,7 @@ export default function SiteSettingsPage() {
         {/* Branding */}
         <div className="bg-card border rounded-xl p-6 shadow-sm space-y-6">
           <div className="flex items-center gap-2">
-            <Store className="h-5 w-5 text-primary" />
+            <Store className="h-5 w-5 text-highlight" />
             <h4 className="font-semibold">Branding</h4>
           </div>
 
@@ -283,7 +283,7 @@ export default function SiteSettingsPage() {
         {/* Social Links */}
         <div className="bg-card border rounded-xl p-6 shadow-sm space-y-6">
           <div className="flex items-center gap-2">
-            <Share2 className="h-5 w-5 text-primary" />
+            <Share2 className="h-5 w-5 text-highlight" />
             <h4 className="font-semibold">Social Links</h4>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

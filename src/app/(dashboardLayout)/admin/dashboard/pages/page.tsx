@@ -11,7 +11,6 @@ import {
 
 const PAGE_ROWS = [
   { title: "Home", href: "/admin/dashboard/home-categories" },
-  { title: "About Us", href: "/admin/dashboard/pages/about-us" },
   {
     title: "Terms and Conditions",
     href: "/admin/dashboard/pages/terms-and-conditions",

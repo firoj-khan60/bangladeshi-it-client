@@ -27,13 +27,13 @@ export default function FaqPage() {
 
         <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
           <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full mb-6">
-            <HelpCircle className="h-4 w-4 text-primary" />
-            <span className="text-primary font-black text-xs uppercase tracking-widest">
+            <HelpCircle className="h-4 w-4 text-highlight" />
+            <span className="text-highlight font-black text-xs uppercase tracking-widest">
               Support Center
             </span>
           </div>
           <h1 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white leading-tight mb-6">
-            Frequently Asked <span className="text-primary">Questions</span>
+            Frequently Asked <span className="text-highlight">Questions</span>
           </h1>
           <p className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-2xl mx-auto leading-relaxed">
             Everything you need to know about working with Bangladeshi IT.

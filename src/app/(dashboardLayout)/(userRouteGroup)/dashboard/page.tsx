@@ -7,7 +7,7 @@ export default function UserDashboardPage() {
   return (
     <div className="space-y-8 p-6 pb-20">
       <div>
-        <h1 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
+        <h1 className="text-3xl md:text-4xl font-black text-foreground tracking-tight">
           My Dashboard
         </h1>
         <p className="text-muted-foreground font-medium mt-1">
@@ -15,14 +15,14 @@ export default function UserDashboardPage() {
         </p>
       </div>
 
-      <Card className="border-none shadow-xl shadow-slate-200/50 rounded-[2.5rem] overflow-hidden bg-white">
+      <Card className="border-none shadow-xl shadow-black/5 rounded-[2.5rem] overflow-hidden bg-card">
         <CardContent className="p-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <div className="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center">
-              <User className="h-7 w-7 text-primary" />
+              <User className="h-7 w-7 text-highlight" />
             </div>
             <div>
-              <h3 className="font-black text-slate-900 text-lg">
+              <h3 className="font-black text-foreground text-lg">
                 Keep your profile up to date
               </h3>
               <p className="text-muted-foreground text-sm font-medium">

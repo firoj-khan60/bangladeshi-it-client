@@ -34,7 +34,7 @@ interface Notification {
   createdAt: string;
 }
 
-const getNotificationIcon = () => <Bell className="h-4 w-4 text-gray-600" />;
+const getNotificationIcon = () => <Bell className="h-4 w-4 text-muted-foreground" />;
 
 interface NotificationDropdownProps {
   role: UserRole;
@@ -81,12 +81,12 @@ const NotificationDropdown = ({ role }: NotificationDropdownProps) => {
         <Button
           variant={"outline"}
           size={"icon"}
-          className="relative rounded-xl border-slate-200 hover:bg-slate-50 transition-all"
+          className="relative rounded-xl border-border hover:bg-muted transition-all"
         >
-          <Bell className="h-5 w-5 text-slate-600" />
+          <Bell className="h-5 w-5 text-muted-foreground" />
           {unreadCount > 0 && (
             <Badge
-              className="absolute -top-1 -right-1 h-5 w-5 rounded-full p-0 flex items-center justify-center bg-rose-500 hover:bg-rose-600 border-2 border-white"
+              className="absolute -top-1 -right-1 h-5 w-5 rounded-full p-0 flex items-center justify-center bg-brand-red hover:bg-brand-red/90 border-2 border-background"
               variant={"destructive"}
             >
               <span className="text-[10px] font-bold">
@@ -99,16 +99,16 @@ const NotificationDropdown = ({ role }: NotificationDropdownProps) => {
 
       <DropdownMenuContent
         align={"end"}
-        className="w-80 rounded-3xl border-slate-100 shadow-2xl shadow-slate-200/50 p-2"
+        className="w-80 rounded-3xl border-border shadow-2xl shadow-black/5 p-2"
       >
         <DropdownMenuLabel className="flex items-center justify-between p-4">
-          <span className="text-base font-black text-slate-900 tracking-tight">
+          <span className="text-base font-black text-foreground tracking-tight">
             Notifications
           </span>
           {unreadCount > 0 && (
             <Badge
               variant={"secondary"}
-              className="bg-blue-50 text-blue-600 font-bold border-none px-3 cursor-pointer"
+              className="bg-primary/10 text-highlight font-bold border-none px-3 cursor-pointer"
               onClick={(e) => {
                 e.stopPropagation();
                 markAllReadMutation.mutate();
@@ -119,7 +119,7 @@ const NotificationDropdown = ({ role }: NotificationDropdownProps) => {
           )}
         </DropdownMenuLabel>
 
-        <DropdownMenuSeparator className="bg-slate-50 mx-2" />
+        <DropdownMenuSeparator className="bg-muted mx-2" />
 
         <ScrollArea className="h-80 my-2">
           {notifications.length > 0 ? (
@@ -127,28 +127,28 @@ const NotificationDropdown = ({ role }: NotificationDropdownProps) => {
               <DropdownMenuItem
                 key={notification.id}
                 onClick={() => handleNotificationClick(notification)}
-                className="flex flex-col items-start gap-2 p-4 cursor-pointer rounded-2xl mx-1 focus:bg-slate-50 transition-colors"
+                className="flex flex-col items-start gap-2 p-4 cursor-pointer rounded-2xl mx-1 focus:bg-muted transition-colors"
               >
                 <div className="flex gap-4 w-full">
-                  <div className="mt-0.5 h-10 w-10 rounded-xl bg-slate-50 flex items-center justify-center shrink-0">
+                  <div className="mt-0.5 h-10 w-10 rounded-xl bg-muted flex items-center justify-center shrink-0">
                     {getNotificationIcon()}
                   </div>
 
                   <div className="flex-1 space-y-1">
                     <div className="flex items-center justify-between">
-                      <p className="text-sm font-black text-slate-800 leading-tight">
+                      <p className="text-sm font-black text-foreground leading-tight">
                         {notification.title}
                       </p>
                       {!notification.isRead && (
-                        <div className="h-2 w-2 rounded-full bg-blue-600 flex-shrink-0 ml-2 shadow-[0_0_8px_rgba(37,99,235,0.5)]" />
+                        <div className="h-2 w-2 rounded-full bg-brand-red flex-shrink-0 ml-2" />
                       )}
                     </div>
 
-                    <p className="text-xs text-slate-500 font-medium line-clamp-2 leading-relaxed">
+                    <p className="text-xs text-muted-foreground font-medium line-clamp-2 leading-relaxed">
                       {notification.message}
                     </p>
 
-                    <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider pt-1">
+                    <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-wider pt-1">
                       {formatDistanceToNow(new Date(notification.createdAt), {
                         addSuffix: true,
                       })}
@@ -159,21 +159,21 @@ const NotificationDropdown = ({ role }: NotificationDropdownProps) => {
             ))
           ) : (
             <div className="p-10 text-center flex flex-col items-center gap-3">
-              <div className="h-12 w-12 rounded-full bg-slate-50 flex items-center justify-center">
-                <Bell className="h-6 w-6 text-slate-300" />
+              <div className="h-12 w-12 rounded-full bg-muted flex items-center justify-center">
+                <Bell className="h-6 w-6 text-muted-foreground/50" />
               </div>
-              <p className="text-sm text-slate-400 font-medium">
+              <p className="text-sm text-muted-foreground font-medium">
                 All caught up!
               </p>
             </div>
           )}
         </ScrollArea>
 
-        <DropdownMenuSeparator className="bg-slate-50 mx-2" />
+        <DropdownMenuSeparator className="bg-muted mx-2" />
 
         <DropdownMenuItem
           onClick={() => router.push(dashboardRoute)}
-          className="text-center justify-center cursor-pointer font-black text-[10px] uppercase tracking-[0.2em] p-4 text-primary hover:bg-primary/5 rounded-2xl transition-all"
+          className="text-center justify-center cursor-pointer font-black text-[10px] uppercase tracking-[0.2em] p-4 text-highlight hover:bg-primary/5 rounded-2xl transition-all"
         >
           Go to Dashboard
         </DropdownMenuItem>

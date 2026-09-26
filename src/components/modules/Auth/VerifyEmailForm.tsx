@@ -130,7 +130,7 @@ const VerifyEmailForm = ({ email }: VerifyEmailFormProps) => {
           Back to{" "}
           <Link
             href="/login"
-            className="text-primary font-medium hover:underline underline-offset-4"
+            className="text-highlight font-medium hover:underline underline-offset-4"
           >
             Log In
           </Link>

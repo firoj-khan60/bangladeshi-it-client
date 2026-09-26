@@ -199,7 +199,7 @@ const RegisterForm = ({ redirectPath }: RegisterFormProps) => {
           Already have an account?{" "}
           <Link
             href="/login"
-            className="text-primary font-medium hover:underline underline-offset-4"
+            className="text-highlight font-medium hover:underline underline-offset-4"
           >
             Log In
           </Link>

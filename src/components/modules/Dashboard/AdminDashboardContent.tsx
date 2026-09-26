@@ -56,7 +56,7 @@ export default function AdminDashboardContent() {
     <div className="space-y-8 p-6 pb-20">
       {/* Header */}
       <div>
-        <h1 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
+        <h1 className="text-3xl md:text-4xl font-black text-foreground tracking-tight">
           Admin Dashboard
         </h1>
         <p className="text-muted-foreground font-medium mt-1">
@@ -69,7 +69,7 @@ export default function AdminDashboardContent() {
         {stats.map((stat, i) => (
           <Card
             key={i}
-            className="border-none shadow-md shadow-slate-200/50 rounded-[2rem] overflow-hidden group hover:shadow-xl transition-all duration-300"
+            className="border-none shadow-md shadow-black/5 rounded-[2rem] overflow-hidden group hover:shadow-xl transition-all duration-300"
           >
             <CardContent className="p-6">
               <div className="flex items-center justify-between mb-4">
@@ -80,7 +80,7 @@ export default function AdminDashboardContent() {
                 </div>
                 <Badge
                   variant="secondary"
-                  className="bg-slate-50 text-slate-400 font-black border-none px-2 py-0.5 rounded-lg text-[10px]"
+                  className="bg-muted text-muted-foreground font-black border-none px-2 py-0.5 rounded-lg text-[10px]"
                 >
                   PLATFORM
                 </Badge>
@@ -89,7 +89,7 @@ export default function AdminDashboardContent() {
                 <p className="text-sm font-bold text-muted-foreground uppercase tracking-widest">
                   {stat.title}
                 </p>
-                <h3 className="text-2xl font-black text-slate-900">
+                <h3 className="text-2xl font-black text-foreground">
                   {stat.value}
                 </h3>
               </div>

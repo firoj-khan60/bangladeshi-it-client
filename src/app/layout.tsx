@@ -30,7 +30,8 @@ export const metadata: Metadata = {
   title: "Bangladeshi IT",
   description: "Software, web, and IT solutions built for growing businesses.",
   icons: {
-    icon: "/logo.png",
+    icon: "/logo2.png",
+    apple: "/logo2.png",
   },
 };
 

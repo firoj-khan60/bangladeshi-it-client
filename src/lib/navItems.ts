@@ -36,6 +36,16 @@ export const userNavItems: NavSection[] = [
 
 export const adminNavItems: NavSection[] = [
   {
+    title: "Sales",
+    items: [
+      {
+        title: "Leads",
+        href: "/admin/dashboard/leads",
+        icon: "Inbox",
+      },
+    ],
+  },
+  {
     title: "User Management",
     items: [
       {
@@ -57,6 +67,11 @@ export const adminNavItems: NavSection[] = [
         title: "Blog",
         href: "/admin/dashboard/blogs",
         icon: "Newspaper",
+      },
+      {
+        title: "Client Logos",
+        href: "/admin/dashboard/client-logos",
+        icon: "Images",
       },
     ],
   },

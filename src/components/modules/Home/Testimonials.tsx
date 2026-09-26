@@ -47,7 +47,7 @@ export default function Testimonials() {
           {testimonials.map((t) => (
             <div key={t.name} data-reveal className="h-full">
               <TiltCard max={5} className="flex flex-col rounded-2xl border border-border bg-card p-8 shadow-sm transition-shadow hover:shadow-xl">
-                <Quote className="h-8 w-8 text-primary/40" aria-hidden />
+                <Quote className="h-8 w-8 text-highlight/40" aria-hidden />
                 <div className="mt-4 flex gap-1" aria-label={`${t.rating} out of 5 stars`}>
                   {[...Array(5)].map((_, index) => (
                     <Star

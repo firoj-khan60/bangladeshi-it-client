@@ -73,12 +73,12 @@ function MessageBubble({ message, onRetry }: { message: Message; onRetry?: (quer
           {message.content}
         </div>
         {message.isError && onRetry && message.queryToRetry && (
-          <button onClick={() => onRetry(message.queryToRetry!)} className="flex items-center gap-1 text-[10px] text-primary hover:underline font-medium mt-1">
+          <button onClick={() => onRetry(message.queryToRetry!)} className="flex items-center gap-1 text-[10px] text-highlight hover:underline font-medium mt-1">
             <RefreshCw size={10} /> Retry
           </button>
         )}
         {!isUser && message.matchInfo && (
-          <span className="inline-flex items-center gap-1 text-[10px] bg-primary/5 text-primary border border-primary/10 px-2 py-0.5 rounded-full font-bold">
+          <span className="inline-flex items-center gap-1 text-[10px] bg-primary/5 text-highlight border border-primary/10 px-2 py-0.5 rounded-full font-bold">
             <Sparkles size={8} /> {message.matchInfo}
           </span>
         )}
@@ -196,7 +196,7 @@ export default function FloatingChatbot() {
             <div className="flex flex-col gap-2 mt-4">
               <p className="text-[10px] text-slate-400 font-black uppercase tracking-widest px-1">Suggested Queries</p>
               {SUGGESTED_QUERIES.map((q) => (
-                <button key={q} onClick={() => handleSend(q)} className="text-left text-xs bg-white border border-slate-100 text-slate-600 px-4 py-2.5 rounded-2xl hover:border-primary/30 hover:text-primary transition-all shadow-sm">
+                <button key={q} onClick={() => handleSend(q)} className="text-left text-xs bg-white border border-slate-100 text-slate-600 px-4 py-2.5 rounded-2xl hover:border-primary/30 hover:text-highlight transition-all shadow-sm">
                   {q}
                 </button>
               ))}

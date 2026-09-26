@@ -59,14 +59,14 @@ function BlogsPageContent() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col items-center text-center max-w-3xl mx-auto space-y-8">
             <div className="inline-flex items-center gap-2 bg-white dark:bg-slate-800 px-5 py-2 rounded-full shadow-sm border border-slate-100 dark:border-slate-700">
-              <Tag className="h-4 w-4 text-primary" />
-              <span className="text-primary font-black text-xs uppercase tracking-widest">
+              <Tag className="h-4 w-4 text-highlight" />
+              <span className="text-highlight font-black text-xs uppercase tracking-widest">
                 Bangladeshi IT Journal
               </span>
             </div>
             <h1 className="text-5xl md:text-7xl font-black text-slate-900 dark:text-white leading-tight">
               Insights into{" "}
-              <span className="text-primary">Technology</span>
+              <span className="text-highlight">Technology</span>
             </h1>
             <p className="text-xl text-slate-500 dark:text-slate-400 font-medium leading-relaxed">
               Explore our latest articles, guides, and stories from the world
@@ -75,7 +75,7 @@ function BlogsPageContent() {
 
             {/* Search Bar */}
             <div className="w-full max-w-xl relative group">
-              <Search className="absolute left-6 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400 group-focus-within:text-primary transition-colors" />
+              <Search className="absolute left-6 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400 group-focus-within:text-highlight transition-colors" />
               <input
                 type="text"
                 value={searchTerm}
@@ -136,19 +136,19 @@ function BlogsPageContent() {
                   <div className="p-8 flex-1 flex flex-col">
                     <div className="flex items-center gap-4 mb-6 text-[10px] font-black text-slate-400 uppercase tracking-widest">
                       <span className="flex items-center gap-1.5">
-                        <Calendar size={12} className="text-primary" />{" "}
+                        <Calendar size={12} className="text-highlight" />{" "}
                         {format(new Date(blog.createdAt), "MMM dd, yyyy")}
                       </span>
                       {blog.author && (
                         <span className="flex items-center gap-1.5">
-                          <User size={12} className="text-primary" />{" "}
+                          <User size={12} className="text-highlight" />{" "}
                           {blog.author}
                         </span>
                       )}
                     </div>
 
                     <Link href={`/blogs/${blog.slug}`}>
-                      <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4 leading-tight group-hover:text-primary transition-colors">
+                      <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4 leading-tight group-hover:text-highlight transition-colors">
                         {blog.title}
                       </h3>
                     </Link>
@@ -162,7 +162,7 @@ function BlogsPageContent() {
                     <Button
                       asChild
                       variant="ghost"
-                      className="w-fit p-0 h-auto font-black text-xs uppercase tracking-widest text-primary hover:bg-transparent group/btn mt-auto"
+                      className="w-fit p-0 h-auto font-black text-xs uppercase tracking-widest text-highlight hover:bg-transparent group/btn mt-auto"
                     >
                       <Link href={`/blogs/${blog.slug}`}>
                         Read More{" "}

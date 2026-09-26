@@ -43,7 +43,7 @@ export default function PageContentForm({ slug, pageContent }: Props) {
     <form onSubmit={handleSubmit} className="space-y-6 max-w-4xl mx-auto">
       <div className="bg-card border rounded-xl p-6 shadow-sm space-y-6">
         <div className="flex items-center gap-2">
-          <FileText className="h-5 w-5 text-primary" />
+          <FileText className="h-5 w-5 text-highlight" />
           <h4 className="font-semibold">Page Content</h4>
         </div>
 

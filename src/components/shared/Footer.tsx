@@ -1,4 +1,4 @@
-import { Mail, Phone, ArrowRight, Send, Building2 } from "lucide-react";
+import { Mail, Phone, ArrowRight, Send } from "lucide-react";
 import {
   FaFacebook,
   FaInstagram,
@@ -8,7 +8,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import Link from "next/link";
-import Image from "next/image";
+import { BrandLogo, BrandName, SITE_NAME } from "./Brand";
 import { ISiteSetting } from "@/types/siteSetting.types";
 
 interface FooterProps {
@@ -29,7 +29,6 @@ const footerLinks = {
 };
 
 export default function Footer({ siteSettings }: FooterProps) {
-  const siteName = siteSettings?.siteName || "Bangladeshi IT";
   const description =
     siteSettings?.description ||
     "Software, web, and IT solutions built for growing businesses.";
@@ -73,7 +72,7 @@ export default function Footer({ siteSettings }: FooterProps) {
   ].filter((social) => Boolean(social.href));
 
   return (
-    <footer className="bg-[#0f172a] pt-16 pb-8 mt-10 rounded-t-[3.5rem] relative overflow-hidden border-t border-white/5">
+    <footer className="dark bg-[#0f172a] pt-16 pb-8 mt-10 rounded-t-[3.5rem] relative overflow-hidden border-t border-white/5">
       {/* Subtle Glow */}
       <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[80px] -translate-y-1/2" />
 
@@ -81,23 +80,9 @@ export default function Footer({ siteSettings }: FooterProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12">
           {/* Brand & Newsletter */}
           <div className="lg:col-span-4 space-y-6">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="h-10 w-10 rounded-xl bg-primary flex items-center justify-center shadow-lg shadow-primary/20 overflow-hidden relative">
-                {siteSettings?.logo ? (
-                  <Image
-                    src={siteSettings.logo}
-                    alt={siteName}
-                    fill
-                    sizes="40px"
-                    className="object-cover"
-                  />
-                ) : (
-                  <Building2 className="h-6 w-6 text-white" />
-                )}
-              </div>
-              <span className="text-xl font-black text-white tracking-tighter">
-                {siteName}
-              </span>
+            <Link href="/" className="flex items-center gap-2.5">
+              <BrandLogo size={40} />
+              <BrandName className="text-xl" />
             </Link>
             <p className="text-slate-400 text-sm font-medium leading-relaxed max-w-sm">
               {description}
@@ -130,7 +115,7 @@ export default function Footer({ siteSettings }: FooterProps) {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-slate-400 text-sm font-bold hover:text-primary transition-colors inline-flex items-center group"
+                      className="text-slate-400 text-sm font-bold hover:text-highlight transition-colors inline-flex items-center group"
                     >
                       <ArrowRight
                         size={12}
@@ -151,7 +136,7 @@ export default function Footer({ siteSettings }: FooterProps) {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-slate-400 text-sm font-bold hover:text-primary transition-colors inline-flex items-center group"
+                      className="text-slate-400 text-sm font-bold hover:text-highlight transition-colors inline-flex items-center group"
                     >
                       <ArrowRight
                         size={12}
@@ -170,7 +155,7 @@ export default function Footer({ siteSettings }: FooterProps) {
             <div className="bg-white/5 border border-white/10 rounded-2xl p-5 space-y-4">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <Mail size={14} className="text-primary" />
+                  <Mail size={14} className="text-highlight" />
                 </div>
                 <div className="overflow-hidden">
                   <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">
@@ -186,7 +171,7 @@ export default function Footer({ siteSettings }: FooterProps) {
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <Phone size={14} className="text-primary" />
+                  <Phone size={14} className="text-highlight" />
                 </div>
                 <div>
                   <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">
@@ -220,16 +205,9 @@ export default function Footer({ siteSettings }: FooterProps) {
         <div className="h-px bg-white/5 w-full mb-8" />
 
         {/* Footer Bottom */}
-        <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
-          <div className="flex flex-col items-center md:items-start gap-1">
-            <p className="text-slate-500 font-bold text-xs">
-              © {new Date().getFullYear()} {siteName}. {copyrightText}
-            </p>
-            <p className="text-[10px] text-slate-600 font-medium">
-              Built with Next.js & Tailwind CSS
-            </p>
-          </div>
-        </div>
+        <p className="text-center text-slate-500 font-bold text-xs">
+          © {new Date().getFullYear()} {SITE_NAME}. {copyrightText}
+        </p>
       </div>
     </footer>
   );

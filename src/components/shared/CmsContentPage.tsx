@@ -16,7 +16,7 @@ const proseClassNames = cn(
   "[&_li]:leading-relaxed",
   "[&_strong]:font-bold [&_strong]:text-slate-800 [&_strong]:dark:text-slate-100",
   "[&_em]:italic",
-  "[&_a]:text-primary [&_a]:font-semibold [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:opacity-80",
+  "[&_a]:text-highlight [&_a]:font-semibold [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:opacity-80",
   "[&_blockquote]:border-l-4 [&_blockquote]:border-primary/50 [&_blockquote]:pl-5 [&_blockquote]:py-1 [&_blockquote]:my-6 [&_blockquote]:italic [&_blockquote]:text-slate-500 [&_blockquote]:dark:text-slate-400",
 );
 
@@ -104,8 +104,8 @@ export default function CmsContentPage({
 
         <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
           <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full mb-6">
-            <Icon className="h-4 w-4 text-primary" />
-            <span className="text-primary font-black text-xs uppercase tracking-widest">
+            <Icon className="h-4 w-4 text-highlight" />
+            <span className="text-highlight font-black text-xs uppercase tracking-widest">
               {eyebrow}
             </span>
           </div>

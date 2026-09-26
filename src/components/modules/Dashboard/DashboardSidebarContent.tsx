@@ -6,6 +6,7 @@ import { getIconComponent } from "@/lib/iconMapper";
 import { cn } from "@/lib/utils";
 import { NavSection } from "@/types/dashboard.types";
 import { UserInfo } from "@/types/user.types";
+import { BrandLogo, BrandName } from "@/components/shared/Brand";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -25,8 +26,9 @@ const DashboardSidebarContent = ({
     <div className="hidden md:flex h-full w-64 flex-col border-r bg-card overflow-y-auto">
       {/* Logo / Brand */}
       <div className="flex h-16 items-center border-b px-6">
-        <Link href={dashboardHome}>
-          <span className="text-xl font-bold text-primary">Bangladeshi IT</span>
+        <Link href={dashboardHome} className="flex items-center gap-2">
+          <BrandLogo size={30} />
+          <BrandName className="text-lg" />
         </Link>
       </div>
 
@@ -77,7 +79,7 @@ const DashboardSidebarContent = ({
       <div className="border-t px-3 py-4">
         <div className="flex items-center gap-3">
           <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
-            <span className="text-sm font-semibold text-primary">
+            <span className="text-sm font-semibold text-highlight">
               {userInfo?.name?.charAt(0).toUpperCase() || "U"}
             </span>
           </div>

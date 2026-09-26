@@ -167,7 +167,7 @@ export default function HeroSection() {
               className={`animate-float absolute hidden items-center gap-3 rounded-2xl border border-border bg-card/80 px-4 py-3 shadow-lg backdrop-blur-md sm:flex ${pos}`}
               style={{ animationDelay: delay }}
             >
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/15 text-primary">
+              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/15 text-highlight">
                 <Icon className="h-4 w-4" />
               </span>
               <span className="text-left">

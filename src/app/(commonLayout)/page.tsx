@@ -1,6 +1,6 @@
 import HeroSection from "@/components/modules/Home/HeroSection";
 import AboutSection from "@/components/modules/Home/AboutSection";
-import TrustMarquee from "@/components/modules/Home/TrustMarquee";
+import ClientLogoMarquee from "@/components/modules/Home/ClientLogoMarquee";
 import ServicesGrid from "@/components/modules/Home/ServicesGrid";
 import EcommerceShowcase from "@/components/modules/Home/EcommerceShowcase";
 import SolutionsSection from "@/components/modules/Home/SolutionsSection";
@@ -17,7 +17,7 @@ export default function HomePage() {
     <div className="flex flex-col overflow-x-clip bg-background">
       <HeroSection />
       <AboutSection />
-      <TrustMarquee />
+      <ClientLogoMarquee />
       <ServicesGrid />
       <EcommerceShowcase />
       <SolutionsSection />

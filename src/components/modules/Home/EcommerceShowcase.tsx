@@ -53,7 +53,7 @@ export default function EcommerceShowcase() {
           <ul data-reveal className="mt-8 space-y-3">
             {FEATURES.map((f) => (
               <li key={f} className="flex items-start gap-3">
-                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-highlight" />
                 <span className="font-medium text-foreground">{f}</span>
               </li>
             ))}
@@ -147,7 +147,7 @@ export default function EcommerceShowcase() {
                   New order
                 </p>
                 <p className="mt-1 text-sm font-bold text-foreground">{current.label} store</p>
-                <div className="mt-2 flex items-center gap-2 text-xs font-semibold text-primary">
+                <div className="mt-2 flex items-center gap-2 text-xs font-semibold text-highlight">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                   Payment received
                 </div>
