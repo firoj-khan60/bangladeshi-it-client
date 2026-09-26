@@ -57,11 +57,11 @@ export default function PrivacyPage() {
         
         <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
           <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full mb-6">
-            <ShieldCheck className="h-4 w-4 text-primary" />
-            <span className="text-primary font-black text-xs uppercase tracking-widest">Privacy Protection</span>
+            <ShieldCheck className="h-4 w-4 text-highlight" />
+            <span className="text-highlight font-black text-xs uppercase tracking-widest">Privacy Protection</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white leading-tight mb-6">
-            Privacy <span className="text-primary">Policy</span>
+            Privacy <span className="text-highlight">Policy</span>
           </h1>
           <p className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-2xl mx-auto leading-relaxed">
             Your trust is our most valuable asset. Learn how we collect, store, safeguard, and use your data.
@@ -83,7 +83,7 @@ export default function PrivacyPage() {
             <div className="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-[2.5rem] p-8 shadow-sm space-y-6">
               <div className="flex items-center gap-3">
                 <div className="p-3 bg-primary/10 rounded-2xl">
-                  <Settings className="h-6 w-6 text-primary" />
+                  <Settings className="h-6 w-6 text-highlight" />
                 </div>
                 <div>
                   <h2 className="text-xl font-black text-slate-900 dark:text-white">Privacy Controls</h2>
@@ -168,7 +168,7 @@ export default function PrivacyPage() {
               
               <div className="flex items-center gap-3 relative z-10">
                 <div className="p-3 bg-white/10 rounded-2xl">
-                  <Trash2 className="h-6 w-6 text-primary" />
+                  <Trash2 className="h-6 w-6 text-highlight" />
                 </div>
                 <div>
                   <h2 className="text-xl font-black">Erase My Data</h2>

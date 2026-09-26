@@ -15,7 +15,7 @@ const proseClassNames = cn(
   "[&_li]:leading-relaxed",
   "[&_strong]:font-bold [&_strong]:text-slate-800 [&_strong]:dark:text-slate-100",
   "[&_em]:italic",
-  "[&_a]:text-primary [&_a]:font-semibold [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:opacity-80",
+  "[&_a]:text-highlight [&_a]:font-semibold [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:opacity-80",
   "[&_blockquote]:border-l-4 [&_blockquote]:border-primary/50 [&_blockquote]:pl-5 [&_blockquote]:py-1 [&_blockquote]:my-6 [&_blockquote]:italic [&_blockquote]:text-slate-500 [&_blockquote]:dark:text-slate-400",
 );
 
@@ -94,12 +94,12 @@ export default async function BlogDetailsPage({ params }: Props) {
           </h1>
           <div className="flex items-center gap-6 text-xs font-black text-slate-400 uppercase tracking-widest">
             <span className="flex items-center gap-1.5">
-              <Calendar size={14} className="text-primary" />
+              <Calendar size={14} className="text-highlight" />
               {format(new Date(blog.createdAt), "MMMM dd, yyyy")}
             </span>
             {blog.author && (
               <span className="flex items-center gap-1.5">
-                <User size={14} className="text-primary" /> {blog.author}
+                <User size={14} className="text-highlight" /> {blog.author}
               </span>
             )}
           </div>

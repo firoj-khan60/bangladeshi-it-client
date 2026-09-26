@@ -56,7 +56,7 @@ const ToolbarButton = ({
     onClick={onClick}
     className={cn(
       "inline-flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground disabled:pointer-events-none disabled:opacity-40",
-      active && "bg-primary/10 text-primary hover:bg-primary/15 hover:text-primary",
+      active && "bg-primary/10 text-highlight hover:bg-primary/15 hover:text-highlight",
     )}
   >
     {children}
@@ -82,7 +82,7 @@ function useRichTextEditor({
         link: {
           openOnClick: false,
           autolink: true,
-          HTMLAttributes: { class: "text-primary underline underline-offset-2" },
+          HTMLAttributes: { class: "text-highlight underline underline-offset-2" },
         },
       }),
       Placeholder.configure({ placeholder: placeholder || "Write something…" }),

@@ -127,7 +127,7 @@ export default function SolutionsSection() {
 
         <div ref={stageRef} className="grid items-center gap-12 [perspective:1400px] lg:grid-cols-[0.8fr_1.2fr]">
           <div key={s.key} className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <span className="text-sm font-bold uppercase tracking-[0.25em] text-primary">{s.full}</span>
+            <span className="text-sm font-bold uppercase tracking-[0.25em] text-highlight">{s.full}</span>
             <h3 className="mt-3 font-serif text-3xl font-bold text-foreground md:text-4xl">
               {s.name} software that fits how you work
             </h3>
@@ -169,7 +169,7 @@ export default function SolutionsSection() {
                   <div className="rounded-xl border border-border bg-background p-4">
                     <div className="mb-4 flex items-center justify-between">
                       <span className="text-xs font-bold text-foreground">This week</span>
-                      <span className="rounded-full bg-primary/15 px-2 py-0.5 text-[10px] font-bold text-primary">
+                      <span className="rounded-full bg-primary/15 px-2 py-0.5 text-[10px] font-bold text-highlight">
                         +18%
                       </span>
                     </div>

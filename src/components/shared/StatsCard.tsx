@@ -22,7 +22,7 @@ const StatsCard = ({
     <Card className={cn("hover:shadow-md transition-shadow", className)}>
       <CardHeader className="flex flex-row items-center justify-between pb-2">
         <CardTitle className="text-sm font-medium">{title}</CardTitle>
-        <div className="h-9 w-9 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+        <div className="h-9 w-9 rounded-lg bg-primary/10 flex items-center justify-center text-highlight">
           {createElement(getIconComponent(iconName), { className: "w-6 h-6" })}
         </div>
       </CardHeader>

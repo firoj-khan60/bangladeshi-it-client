@@ -62,7 +62,7 @@ export default function SmsSettingsPage() {
   if (isLoading) {
     return (
       <div className="flex h-[400px] items-center justify-center">
-        <Loader2 className="h-8 w-8 animate-spin text-primary" />
+        <Loader2 className="h-8 w-8 animate-spin text-highlight" />
       </div>
     );
   }

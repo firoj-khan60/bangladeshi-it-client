@@ -92,7 +92,7 @@ const UserActions = ({ user }: { user: IUser }) => {
           </DropdownMenuItem>
         ) : (
           <DropdownMenuItem
-            className="text-primary focus:text-primary"
+            className="text-highlight focus:text-highlight"
             onClick={() => changeStatus("ACTIVE")}
             disabled={isStatusPending}
           >

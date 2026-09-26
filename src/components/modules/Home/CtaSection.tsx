@@ -6,7 +6,7 @@ import Reveal from "@/components/shared/motion/Reveal";
 export default function CtaSection() {
   return (
     <section className="bg-background px-6 pb-20 md:pb-28">
-      <Reveal className="container mx-auto">
+      <Reveal className="container mx-auto" start="top 95%" duration={0.6} stagger={0.06} y={20}>
         <div className="relative isolate overflow-hidden rounded-[2rem] border border-border bg-card px-6 py-16 text-center shadow-2xl md:px-16 md:py-20">
           <div className="bg-grid absolute inset-0 -z-10" aria-hidden />
           <div className="absolute -left-20 -top-20 -z-10 h-72 w-72 rounded-full bg-primary/25 blur-[100px]" aria-hidden />

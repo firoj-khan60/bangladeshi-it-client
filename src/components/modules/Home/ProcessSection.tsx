@@ -137,7 +137,7 @@ export default function ProcessSection() {
                 {/* Big faded step number */}
                 <span
                   aria-hidden
-                  className="pointer-events-none absolute right-8 top-6 font-mono text-6xl font-black text-foreground/[0.05] transition-colors duration-500 group-hover:text-primary/15"
+                  className="pointer-events-none absolute right-8 top-6 font-mono text-6xl font-black text-foreground/[0.05] transition-colors duration-500 group-hover:text-highlight/15"
                 >
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -152,7 +152,7 @@ export default function ProcessSection() {
                   <Icon data-step-icon strokeWidth={1.5} className="relative h-16 w-16 text-brand-blue" />
                 </div>
 
-                <p className="mt-10 text-xs font-bold uppercase tracking-[0.25em] text-primary">
+                <p className="mt-10 text-xs font-bold uppercase tracking-[0.25em] text-highlight">
                   Step {String(i + 1).padStart(2, "0")} · {step}
                 </p>
                 <h3 className="mt-3 text-xl font-bold tracking-tight text-foreground md:text-2xl">{title}</h3>

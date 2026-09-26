@@ -124,7 +124,7 @@ const LoginForm = ({ redirectPath }: LoginFormProps) => {
           <div className="text-right mt-2">
             <Link
               href="/forgot-password"
-              className="text-sm text-primary hover:underline underline-offset-4"
+              className="text-sm text-highlight hover:underline underline-offset-4"
             >
               Forgot password?
             </Link>
@@ -228,7 +228,7 @@ const LoginForm = ({ redirectPath }: LoginFormProps) => {
           Don&apos;t have an account?{" "}
           <Link
             href="/register"
-            className="text-primary font-medium hover:underline underline-offset-4"
+            className="text-highlight font-medium hover:underline underline-offset-4"
           >
             Sign Up for an account
           </Link>

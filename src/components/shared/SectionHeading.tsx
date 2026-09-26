@@ -32,7 +32,7 @@ export default function SectionHeading({
         <span
           className={cn(
             "text-xs font-bold uppercase tracking-[0.3em]",
-            light ? "text-white/70" : "text-primary",
+            light ? "text-white/70" : "text-highlight",
           )}
         >
           {eyebrow}

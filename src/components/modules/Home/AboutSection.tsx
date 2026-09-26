@@ -60,14 +60,14 @@ export default function AboutSection() {
           </div>
           <div data-reveal className="space-y-6">
             <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
-              <span className="font-semibold text-foreground">Bangladeshi IT</span> is a software and
+              <span className="font-semibold text-foreground">Bangladeshi IT</span>{" "}is a software and
               digital agency that helps businesses go online, run smarter and grow faster. For over
               seven years we&apos;ve partnered with shops, startups and established companies —
               building the websites, business systems and marketing that keep them moving forward.
             </p>
             <Link
               href="/about"
-              className="group inline-flex items-center gap-2 font-bold text-foreground transition-colors hover:text-primary"
+              className="group inline-flex items-center gap-2 font-bold text-foreground transition-colors hover:text-highlight"
             >
               Read our story
               <span className="flex h-9 w-9 items-center justify-center rounded-full border border-border transition-all duration-300 group-hover:translate-x-1 group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground">
@@ -79,37 +79,65 @@ export default function AboutSection() {
 
         {/* Bento */}
         <Reveal className="mt-14 grid gap-5 md:grid-cols-2 lg:mt-16 lg:grid-cols-3" stagger={0.1}>
-          {/* Experience — tall gradient card */}
+          {/* Experience — tall brand-green card (same look in light and dark mode) */}
           <div data-reveal className="md:row-span-2">
             <TiltCard
               max={5}
               glare={false}
-              className="flex min-h-[320px] flex-col justify-between overflow-hidden rounded-[2rem] bg-gradient-to-br from-primary to-brand-blue p-8 text-primary-foreground shadow-2xl shadow-primary/20 md:p-10"
+              className="flex h-full min-h-[360px] flex-col justify-between overflow-hidden rounded-[2rem] bg-[linear-gradient(150deg,#0b8a4c_0%,#066938_45%,#03401f_100%)] p-8 text-white shadow-2xl shadow-primary/25 ring-1 ring-white/10 md:p-10"
             >
-              {/* Slowly turning dashed rings */}
+              {/* Soft light from the top-right, brand-red warmth bottom-left */}
+              <div aria-hidden className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/15 blur-3xl" />
+              <div aria-hidden className="pointer-events-none absolute -bottom-24 -left-16 h-56 w-56 rounded-full bg-brand-red/25 blur-3xl" />
+              {/* Fine dot texture, fading out toward the bottom */}
               <div
                 aria-hidden
-                className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 animate-[spin_40s_linear_infinite] rounded-full border-2 border-dashed border-white/25 motion-reduce:animate-none"
+                className="pointer-events-none absolute inset-0 opacity-25 [background-image:radial-gradient(rgba(255,255,255,0.35)_1px,transparent_1px)] [background-size:18px_18px] [mask-image:linear-gradient(to_bottom,black,transparent_70%)]"
+              />
+              {/* Slowly turning rings */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 animate-[spin_40s_linear_infinite] rounded-full border-2 border-dashed border-white/20 motion-reduce:animate-none"
               />
               <div
                 aria-hidden
-                className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 animate-[spin_25s_linear_infinite_reverse] rounded-full border border-white/20 motion-reduce:animate-none"
+                className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 animate-[spin_25s_linear_infinite_reverse] rounded-full border border-white/15 motion-reduce:animate-none"
               />
 
-              <p className="relative text-sm font-bold uppercase tracking-[0.25em] text-white/80">
+              <span className="relative inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-white/90 backdrop-blur">
+                <span className="h-1.5 w-1.5 rounded-full bg-brand-red" />
                 Since day one
-              </p>
+              </span>
+
               <div className="relative">
                 <div className="flex items-start leading-none">
-                  <span ref={countRef} className="text-[7.5rem] font-black tracking-tighter md:text-[9rem]">
+                  <span
+                    ref={countRef}
+                    className="bg-linear-to-b from-white to-white/70 bg-clip-text text-[7.5rem] font-black tracking-tighter text-transparent md:text-[9rem]"
+                  >
                     {YEARS}
                   </span>
-                  <span className="mt-3 text-6xl font-black text-white/80">+</span>
+                  <span className="mt-3 text-6xl font-black text-brand-red drop-shadow-[0_2px_12px_rgba(235,33,39,0.45)]">
+                    +
+                  </span>
                 </div>
                 <p className="mt-2 text-xl font-bold">Years of experience</p>
-                <p className="mt-2 max-w-xs text-sm leading-relaxed text-white/80">
+                <p className="mt-2 max-w-xs text-sm leading-relaxed text-white/75">
                   building technology for businesses across Bangladesh and beyond.
                 </p>
+
+                <dl className="mt-8 grid grid-cols-2 gap-4 border-t border-white/15 pt-6">
+                  {[
+                    { value: "100+", label: "Projects delivered" },
+                    { value: "50+", label: "Happy clients" },
+                  ].map((stat) => (
+                    <div key={stat.label}>
+                      <dt className="sr-only">{stat.label}</dt>
+                      <dd className="text-2xl font-black">{stat.value}</dd>
+                      <dd className="text-xs font-medium text-white/70">{stat.label}</dd>
+                    </div>
+                  ))}
+                </dl>
               </div>
             </TiltCard>
           </div>
@@ -117,7 +145,7 @@ export default function AboutSection() {
           {/* Mission */}
           <div data-reveal>
             <TiltCard max={5} className="rounded-[2rem] border border-border bg-card p-8 shadow-sm">
-              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/12 text-primary">
+              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/12 text-highlight">
                 <Target className="h-6 w-6" />
               </span>
               <h3 className="mt-6 text-xl font-bold text-foreground">Our Mission</h3>
@@ -152,7 +180,7 @@ export default function AboutSection() {
                 {PILLARS.map(({ title, description, icon: Icon }, i) => (
                   <li key={title} className="group relative">
                     <div className="flex items-center gap-3">
-                      <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-card text-primary shadow-sm ring-1 ring-border transition-transform duration-300 group-hover:-translate-y-1 group-hover:rotate-6">
+                      <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-card text-highlight shadow-sm ring-1 ring-border transition-transform duration-300 group-hover:-translate-y-1 group-hover:rotate-6">
                         <Icon className="h-5 w-5" />
                       </span>
                       <span className="font-mono text-xs font-bold text-muted-foreground">

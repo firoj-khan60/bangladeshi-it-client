@@ -373,7 +373,7 @@ const DataTableFilters = ({
           const activeCount = getFilterActiveCount(filter, filterValue);
           const triggerClass = cn(
             "h-9",
-            activeCount > 0 && "border-primary text-primary",
+            activeCount > 0 && "border-primary text-highlight",
           );
 
           return (

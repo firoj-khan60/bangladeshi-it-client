@@ -3,14 +3,12 @@ import { getPageContent } from "@/services/pageContent.services";
 import PageContentForm from "./_components/PageContentForm";
 
 const KNOWN_SLUGS = [
-  "about-us",
   "terms-and-conditions",
   "privacy-policy",
   "refund-policy",
 ] as const;
 
 const PAGE_LABELS: Record<(typeof KNOWN_SLUGS)[number], string> = {
-  "about-us": "About Us",
   "terms-and-conditions": "Terms and Conditions",
   "privacy-policy": "Privacy Policy",
   "refund-policy": "Refund Policy",

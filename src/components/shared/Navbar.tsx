@@ -1,6 +1,7 @@
 "use client";
 
-import { Menu, LayoutDashboard, LogOut, User, Building2 } from "lucide-react";
+import { Menu, LayoutDashboard, LogOut, User } from "lucide-react";
+import { Fragment } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { logoutUser } from "@/services/auth.services";
@@ -26,8 +27,19 @@ import { UserInfo } from "@/types/user.types";
 import { ISiteSetting } from "@/types/siteSetting.types";
 import { getDefaultDashboardRoute, getProfileRoute } from "@/lib/authUtils";
 
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import { SERVICE_ROUTE_PREFIXES } from "@/lib/serviceMenu";
 import { ThemeToggle } from "./ThemeToggle";
+import { MobileServicesMenu, ServicesMegaMenu } from "./ServicesMenu";
 import Image from "next/image";
+import { BrandLogo, BrandName } from "./Brand";
 
 interface NavbarProps {
   className?: string;
@@ -47,9 +59,7 @@ const Navbar = ({ userInfo, className, siteSettings }: NavbarProps) => {
   const router = useRouter();
   const pathname = usePathname();
 
-  const siteName = siteSettings?.siteName || "Bangladeshi IT";
   const tagline = siteSettings?.tagline;
-  const logo = siteSettings?.logo;
 
   const dashboardRoute = userInfo
     ? getDefaultDashboardRoute(userInfo.role)
@@ -58,6 +68,13 @@ const Navbar = ({ userInfo, className, siteSettings }: NavbarProps) => {
   const profileRoute = userInfo
     ? getProfileRoute(userInfo.role)
     : "/dashboard/my-profile";
+
+  const servicesActive = SERVICE_ROUTE_PREFIXES.some((prefix) => pathname.startsWith(prefix));
+  const linkClass = (href: string) =>
+    cn(
+      "text-sm font-semibold text-muted-foreground hover:text-highlight transition-colors",
+      pathname === href && "text-highlight",
+    );
 
   const handleLogout = async () => {
     await logoutUser();
@@ -78,19 +95,13 @@ const Navbar = ({ userInfo, className, siteSettings }: NavbarProps) => {
           {/* Left: Logo */}
           <div className="flex items-center">
             <Link href="/" className="group flex items-center gap-2.5">
-              <div className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl bg-primary shadow-lg shadow-primary/20 transition-transform group-hover:scale-110">
-                {logo ? (
-                  <Image src={logo} alt={siteName} fill sizes="40px" className="object-cover" />
-                ) : (
-                  <Building2 className="h-6 w-6 text-primary-foreground" />
-                )}
+              <div className="transition-transform group-hover:scale-110">
+                <BrandLogo size={40} />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-black tracking-tight leading-none text-foreground">
-                  {siteName}
-                </span>
+                <BrandName className="text-xl" />
                 {tagline && (
-                  <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-muted-foreground">
+                  <span className="text-[12px] font-medium tracking-[0.2em] uppercase text-muted-foreground">
                     {tagline}
                   </span>
                 )}
@@ -99,20 +110,36 @@ const Navbar = ({ userInfo, className, siteSettings }: NavbarProps) => {
           </div>
 
           {/* Center: Nav Links */}
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={cn(
-                  "text-sm font-semibold text-muted-foreground hover:text-primary transition-colors",
-                  pathname === link.href && "text-primary",
-                )}
-              >
-                {link.name}
-              </Link>
-            ))}
-          </div>
+          <NavigationMenu className="hidden md:flex">
+            <NavigationMenuList className="gap-8">
+              {navLinks.map((link) => (
+                <Fragment key={link.href}>
+                  <NavigationMenuItem>
+                    <NavigationMenuLink asChild className={cn(linkClass(link.href), "p-0 hover:bg-transparent focus:bg-transparent")}>
+                      <Link href={link.href}>{link.name}</Link>
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+
+                  {/* Services mega-menu sits right after Home */}
+                  {link.href === "/" && (
+                    <NavigationMenuItem>
+                      <NavigationMenuTrigger
+                        className={cn(
+                          "h-auto bg-transparent p-0 text-sm font-semibold text-muted-foreground hover:bg-transparent hover:text-highlight focus:bg-transparent data-open:bg-transparent data-open:text-highlight data-open:hover:bg-transparent data-open:focus:bg-transparent",
+                          servicesActive && "text-highlight",
+                        )}
+                      >
+                        Services
+                      </NavigationMenuTrigger>
+                      <NavigationMenuContent className="p-0">
+                        <ServicesMegaMenu />
+                      </NavigationMenuContent>
+                    </NavigationMenuItem>
+                  )}
+                </Fragment>
+              ))}
+            </NavigationMenuList>
+          </NavigationMenu>
 
           {/* Right: Actions */}
           <div className="flex items-center gap-3">
@@ -145,7 +172,7 @@ const Navbar = ({ userInfo, className, siteSettings }: NavbarProps) => {
                 >
                   <DropdownMenuLabel className="font-normal">
                     <div className="flex items-center gap-3 px-1 py-1.5">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary font-bold">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-highlight font-bold">
                         {userInfo.name.charAt(0).toUpperCase()}
                       </div>
                       <div className="flex flex-col space-y-0.5">
@@ -161,13 +188,13 @@ const Navbar = ({ userInfo, className, siteSettings }: NavbarProps) => {
                   <DropdownMenuSeparator />
                   <DropdownMenuItem asChild className="cursor-pointer py-2.5">
                     <Link href={dashboardRoute} className="flex items-center">
-                      <LayoutDashboard className="mr-3 h-4 w-4 text-primary" />
+                      <LayoutDashboard className="mr-3 h-4 w-4 text-highlight" />
                       <span className="font-medium">Dashboard</span>
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild className="cursor-pointer py-2.5">
                     <Link href={profileRoute} className="flex items-center">
-                      <User className="mr-3 h-4 w-4 text-primary" />
+                      <User className="mr-3 h-4 w-4 text-highlight" />
                       <span className="font-medium">My Profile</span>
                     </Link>
                   </DropdownMenuItem>
@@ -207,16 +234,8 @@ const Navbar = ({ userInfo, className, siteSettings }: NavbarProps) => {
         <div className="flex h-16 items-center justify-between lg:hidden">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="relative flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg bg-primary">
-              {logo ? (
-                <Image src={logo} alt={siteName} fill sizes="32px" className="object-cover" />
-              ) : (
-                <Building2 className="h-5 w-5 text-primary-foreground" />
-              )}
-            </div>
-            <span className="text-lg font-black tracking-tight">
-              {siteName}
-            </span>
+            <BrandLogo size={32} />
+            <BrandName className="text-lg" />
           </Link>
 
           <div className="flex items-center gap-2">
@@ -236,16 +255,8 @@ const Navbar = ({ userInfo, className, siteSettings }: NavbarProps) => {
                     <div className="flex items-center justify-between">
                       <SheetTitle>
                         <Link href="/" className="flex items-center gap-2">
-                          <div className="relative flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg bg-primary">
-                            {logo ? (
-                              <Image src={logo} alt={siteName} fill sizes="32px" className="object-cover" />
-                            ) : (
-                              <Building2 className="h-5 w-5 text-primary-foreground" />
-                            )}
-                          </div>
-                          <span className="text-xl font-black tracking-tight">
-                            {siteName}
-                          </span>
+                          <BrandLogo size={32} />
+                          <BrandName className="text-xl" />
                         </Link>
                       </SheetTitle>
                     </div>
@@ -257,14 +268,17 @@ const Navbar = ({ userInfo, className, siteSettings }: NavbarProps) => {
                   <div className="flex-1 overflow-y-auto py-6 px-6">
                     <div className="flex flex-col gap-1">
                       {navLinks.map((link) => (
-                        <SheetTrigger asChild key={link.href}>
-                          <Link
-                            href={link.href}
-                            className="flex items-center h-12 rounded-xl px-4 font-semibold text-sm hover:bg-muted transition-colors"
-                          >
-                            {link.name}
-                          </Link>
-                        </SheetTrigger>
+                        <div key={link.href}>
+                          <SheetTrigger asChild>
+                            <Link
+                              href={link.href}
+                              className="flex items-center h-12 rounded-xl px-4 font-semibold text-sm hover:bg-muted transition-colors"
+                            >
+                              {link.name}
+                            </Link>
+                          </SheetTrigger>
+                          {link.href === "/" && <MobileServicesMenu active={servicesActive} />}
+                        </div>
                       ))}
                     </div>
                   </div>
@@ -273,7 +287,7 @@ const Navbar = ({ userInfo, className, siteSettings }: NavbarProps) => {
                     {userInfo ? (
                       <div className="flex flex-col gap-3">
                         <div className="flex items-center gap-3 mb-2 px-2">
-                          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary font-bold">
+                          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-highlight font-bold">
                             {userInfo.name.charAt(0).toUpperCase()}
                           </div>
                           <div className="flex flex-col">
@@ -292,7 +306,7 @@ const Navbar = ({ userInfo, className, siteSettings }: NavbarProps) => {
                           className="justify-start gap-3 h-12 rounded-xl"
                         >
                           <Link href={dashboardRoute}>
-                            <LayoutDashboard className="size-5 text-primary" />
+                            <LayoutDashboard className="size-5 text-highlight" />
                             Dashboard
                           </Link>
                         </Button>

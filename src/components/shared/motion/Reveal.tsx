@@ -9,6 +9,28 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
+let layoutWatcher: ResizeObserver | null = null;
+
+/**
+ * Trigger positions are measured once, so content that changes height after
+ * load (async FAQ, images) leaves later sections' triggers stale and their
+ * reveal fires late. One shared observer re-measures whenever the page grows
+ * or shrinks.
+ */
+function watchLayout() {
+  if (layoutWatcher || typeof ResizeObserver === "undefined") return;
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  let lastHeight = document.body.scrollHeight;
+  layoutWatcher = new ResizeObserver(() => {
+    const h = document.body.scrollHeight;
+    if (h === lastHeight) return;
+    lastHeight = h;
+    clearTimeout(timer);
+    timer = setTimeout(() => ScrollTrigger.refresh(), 150);
+  });
+  layoutWatcher.observe(document.body);
+}
+
 interface RevealProps {
   children: ReactNode;
   className?: string;
@@ -17,6 +39,10 @@ interface RevealProps {
   /** Starting vertical offset in px. */
   y?: number;
   delay?: number;
+  /** ScrollTrigger start position. */
+  start?: string;
+  /** Tween duration in seconds. */
+  duration?: number;
   id?: string;
 }
 
@@ -31,6 +57,8 @@ export default function Reveal({
   stagger = 0.08,
   y = 28,
   delay = 0,
+  start = "top 85%",
+  duration = 0.8,
   id,
 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
@@ -39,6 +67,7 @@ export default function Reveal({
     const root = ref.current;
     if (!root) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    watchLayout();
 
     const ctx = gsap.context(() => {
       const marked = root.querySelectorAll<HTMLElement>("[data-reveal]");
@@ -47,20 +76,20 @@ export default function Reveal({
       gsap.to(targets, {
         autoAlpha: 1,
         y: 0,
-        duration: 0.8,
+        duration,
         ease: "power3.out",
         stagger,
         delay,
         scrollTrigger: {
           trigger: root,
-          start: "top 85%",
+          start,
           toggleActions: "play none none none",
         },
       });
     }, root);
 
     return () => ctx.revert();
-  }, [stagger, y, delay]);
+  }, [stagger, y, delay, start, duration]);
 
   return (
     <div ref={ref} id={id} className={cn(className)}>

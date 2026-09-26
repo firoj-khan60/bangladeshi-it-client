@@ -47,7 +47,7 @@ const UserDropdown = ({ userInfo }: UserDropdownProps) => {
               {userInfo?.email || ""}
             </p>
 
-            <p className="text-xs text-primary capitalize">
+            <p className="text-xs text-highlight capitalize">
               {userInfo?.role?.toLowerCase().replace("_", " ") || "Guest"}
             </p>
           </div>
@@ -76,7 +76,7 @@ const UserDropdown = ({ userInfo }: UserDropdownProps) => {
 
         <DropdownMenuItem
           onClick={handleLogout}
-          className="cursor-pointer text-red-600 w-full flex items-center"
+          className="cursor-pointer text-destructive w-full flex items-center"
         >
           <LogOut className="mr-2 h-4 w-4" />
           Logout
