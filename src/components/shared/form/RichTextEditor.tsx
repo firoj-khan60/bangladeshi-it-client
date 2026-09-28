@@ -323,7 +323,7 @@ type SimpleRichTextEditorProps = {
 
 /**
  * Same Tiptap editor as RichTextEditor, but for plain useState-based forms
- * (no @tanstack/react-form field required) — takes value/onChange directly.
+ * (no @tanstack/react-form field required) - takes value/onChange directly.
  */
 export function SimpleRichTextEditor({
   id,

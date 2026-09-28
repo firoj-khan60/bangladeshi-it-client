@@ -17,7 +17,7 @@ const CHANNELS = [
   { icon: SiGoogleads, label: "Google Ads", className: "bg-[#4285F4]" },
 ];
 
-/** Lightweight CSS mockup of a tracking dashboard — no images, fast on mobile. */
+/** Lightweight CSS mockup of a tracking dashboard - no images, fast on mobile. */
 function DashboardMockup() {
   return (
     <div className="relative mx-auto w-full max-w-md lg:max-w-none">
@@ -130,7 +130,7 @@ export default function TrackingHero({ phone }: { phone?: string | null }) {
 
           <p data-reveal className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
             Pixel, GTM, GA4 ও Server-Side Tracking সেটআপ করে আমরা আপনার Website-এর প্রতিটি Customer Journey
-            সঠিকভাবে Track করি — যাতে Ads-এর প্রতিটি টাকা কোথায় কাজ করছে, আপনি নিশ্চিত জানতে পারেন।
+            সঠিকভাবে Track করি - যাতে Ads-এর প্রতিটি টাকা কোথায় কাজ করছে, আপনি নিশ্চিত জানতে পারেন।
           </p>
 
           <div data-reveal className="mt-8 flex flex-col gap-3 sm:flex-row">

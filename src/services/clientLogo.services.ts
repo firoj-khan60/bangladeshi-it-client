@@ -6,9 +6,16 @@ import { IClientLogo, IPublicClientLogo } from "@/types/clientLogo.types";
 export const getPublicClientLogos = async () => {
   try {
     return await httpClient.get<IPublicClientLogo[]>("/client-logos/public");
-  } catch (error) {
-    console.error("Error fetching public client logos:", error);
-    throw error;
+  } catch (error: any) {
+    console.error(
+      "Error fetching public client logos:",
+      error?.response?.data?.message || error?.message || error,
+    );
+    return {
+      success: false,
+      message: error?.response?.data?.message || "Failed to fetch public client logos",
+      data: [] as IPublicClientLogo[],
+    };
   }
 };
 

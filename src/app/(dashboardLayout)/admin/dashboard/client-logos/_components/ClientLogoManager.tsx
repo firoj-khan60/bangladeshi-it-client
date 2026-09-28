@@ -100,7 +100,7 @@ const ClientLogoManager = () => {
           <ImageOff className="h-8 w-8 text-muted-foreground" />
           <p className="font-medium">No client logos yet</p>
           <p className="text-sm text-muted-foreground">
-            Add a logo above — it appears in the home page marquee right away.
+            Add a logo above - it appears in the home page marquee right away.
           </p>
         </div>
       ) : (

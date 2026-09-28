@@ -21,7 +21,7 @@ import {
 
 // Navbar "Services" menu. Routes follow the information architecture in
 // 3D-ANIMATION-PLAN.md §5 (e-commerce at /ecommerce, other services under
-// /services, POS/ERP/CRM/HRM under /solutions).
+// /services, POS/CRM/HRM/ERP under /solutions).
 
 export type MenuItem = {
   title: string;
@@ -35,7 +35,7 @@ export type MenuItem = {
 /** E-commerce is the flagship service and is always listed first. */
 export const ECOMMERCE: MenuItem = {
   title: "E-commerce Solution",
-  description: "Complete online stores — catalog, cart, checkout and an order dashboard.",
+  description: "Complete online stores - catalog, cart, checkout and an order dashboard.",
   href: "/ecommerce",
   icon: ShoppingCart,
 };
@@ -103,9 +103,9 @@ export const SERVICES: MenuItem[] = [
 
 export const SOLUTIONS: MenuItem[] = [
   { title: "POS", description: "Point of Sale", href: "/solutions/pos", icon: Receipt },
-  { title: "ERP", description: "Resource Planning", href: "/solutions/erp", icon: Boxes },
   { title: "CRM", description: "Customer Management", href: "/solutions/crm", icon: Users },
   { title: "HRM", description: "HR & Payroll", href: "/solutions/hrm", icon: IdCard },
+  { title: "ERP", description: "Resource Planning", href: "/solutions/erp", icon: Boxes },
 ];
 
 export const SERVICES_OVERVIEW_HREF = "/services";

@@ -54,7 +54,7 @@ export const blogColumns: ColumnDef<IBlog>[] = [
     header: "Author",
     cell: ({ row }) => (
       <span className="text-sm text-muted-foreground">
-        {row.original.author || "—"}
+        {row.original.author || "-"}
       </span>
     ),
   },

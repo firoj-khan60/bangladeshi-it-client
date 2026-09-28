@@ -76,8 +76,11 @@ const httpGet = async <TData>(
       headers: options?.headers,
     });
     return response.data;
-  } catch (error) {
-    console.error(`GET request to ${endpoint} failed:`, error);
+  } catch (error: any) {
+    console.error(
+      `GET request to ${endpoint} failed:`,
+      error?.response?.data?.message || error?.message || error,
+    );
     throw error;
   }
 };
@@ -94,8 +97,11 @@ const httpPost = async <TData>(
       headers: options?.headers,
     });
     return response.data;
-  } catch (error) {
-    console.error(`POST request to ${endpoint} failed:`, error);
+  } catch (error: any) {
+    console.error(
+      `POST request to ${endpoint} failed:`,
+      error?.response?.data?.message || error?.message || error,
+    );
     throw error;
   }
 };
@@ -112,8 +118,11 @@ const httpPut = async <TData>(
       headers: options?.headers,
     });
     return response.data;
-  } catch (error) {
-    console.error(`PUT request to ${endpoint} failed:`, error);
+  } catch (error: any) {
+    console.error(
+      `PUT request to ${endpoint} failed:`,
+      error?.response?.data?.message || error?.message || error,
+    );
     throw error;
   }
 };
@@ -130,8 +139,11 @@ const httpPatch = async <TData>(
       headers: options?.headers,
     });
     return response.data;
-  } catch (error) {
-    console.error(`PATCH request to ${endpoint} failed:`, error);
+  } catch (error: any) {
+    console.error(
+      `PATCH request to ${endpoint} failed:`,
+      error?.response?.data?.message || error?.message || error,
+    );
     throw error;
   }
 };
@@ -147,8 +159,11 @@ const httpDelete = async <TData>(
       headers: options?.headers,
     });
     return response.data;
-  } catch (error) {
-    console.error(`DELETE request to ${endpoint} failed:`, error);
+  } catch (error: any) {
+    console.error(
+      `DELETE request to ${endpoint} failed:`,
+      error?.response?.data?.message || error?.message || error,
+    );
     throw error;
   }
 };

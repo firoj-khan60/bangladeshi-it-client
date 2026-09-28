@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-/** Small seeded PRNG — star positions are identical on server and client. */
+/** Small seeded PRNG - star positions are identical on server and client. */
 function mulberry32(seed: number) {
   return () => {
     seed |= 0;

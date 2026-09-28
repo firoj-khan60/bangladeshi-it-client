@@ -14,7 +14,7 @@ interface TiltCardProps {
 
 /**
  * CSS-3D tilt-on-hover card. Pointer position drives rotateX/Y through CSS
- * variables (no React re-renders). Mouse only — touch and reduced-motion
+ * variables (no React re-renders). Mouse only - touch and reduced-motion
  * users get a flat card.
  */
 export default function TiltCard({

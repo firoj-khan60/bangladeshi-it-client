@@ -20,7 +20,7 @@ export default function CtaSection() {
             Have a project in mind? <span className="text-gradient-brand">Let&apos;s build it right.</span>
           </h2>
           <p data-reveal className="mx-auto mt-5 max-w-xl text-lg text-muted-foreground">
-            Tell us what you need — we&apos;ll reply with a clear plan, timeline and quote. No pressure, no jargon.
+            Tell us what you need - we&apos;ll reply with a clear plan, timeline and quote. No pressure, no jargon.
           </p>
           <div data-reveal className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button asChild size="lg" className="h-12 rounded-full px-8 font-bold shadow-xl shadow-primary/25">

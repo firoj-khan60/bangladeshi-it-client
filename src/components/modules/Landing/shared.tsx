@@ -10,7 +10,7 @@ import {
 import LeadForm from "./LeadForm";
 import { LEAD_FORM_ID } from "./constants";
 
-// Geist has no Bengali glyphs — the browser falls back to Hind Siliguri per glyph
+// Geist has no Bengali glyphs - the browser falls back to Hind Siliguri per glyph
 const hindSiliguri = Hind_Siliguri({
   variable: "--font-bangla",
   subsets: ["bengali", "latin"],
@@ -29,22 +29,17 @@ export function LandingPage({ children }: { children: React.ReactNode }) {
   );
 }
 
-/** Centered eyebrow + heading + subtitle; children animate via the parent Reveal. */
+/** Centered heading + subtitle; children animate via the parent Reveal. */
 export function SectionTitle({
-  eyebrow,
   title,
   subtitle,
 }: {
-  eyebrow: string;
   title: React.ReactNode;
   subtitle?: string;
 }) {
   return (
     <div className="mx-auto mb-12 max-w-2xl text-center">
-      <p data-reveal className="text-sm font-semibold uppercase tracking-[0.2em] text-highlight">
-        {eyebrow}
-      </p>
-      <h2 data-reveal className="mt-3 text-3xl font-bold leading-snug tracking-tight md:text-4xl">
+      <h2 data-reveal className="text-3xl font-bold leading-snug tracking-tight md:text-4xl">
         {title}
       </h2>
       {subtitle && (
@@ -70,7 +65,7 @@ interface FaqAndLeadSectionProps {
   source: string;
 }
 
-/** FAQ on the left, lead form on the right — the conversion block of every landing page. */
+/** FAQ on the left, lead form on the right - the conversion block of every landing page. */
 export function FaqAndLeadSection({
   faqs,
   includesTitle,
@@ -83,10 +78,7 @@ export function FaqAndLeadSection({
     <section className="px-4 py-20 md:px-8 md:py-28">
       <div className="container mx-auto grid gap-10 lg:grid-cols-2 lg:gap-14">
         <Reveal>
-          <p data-reveal className="text-sm font-semibold uppercase tracking-[0.2em] text-highlight">
-            প্রশ্ন ও উত্তর
-          </p>
-          <h2 data-reveal className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
+          <h2 data-reveal className="text-3xl font-bold tracking-tight md:text-4xl">
             সাধারণ কিছু প্রশ্ন
           </h2>
           <div data-reveal className="mt-8 rounded-3xl border bg-card px-6">
@@ -126,7 +118,7 @@ export function FaqAndLeadSection({
             </span>
             <h2 className="mt-4 text-2xl font-bold md:text-3xl">{formTitle}</h2>
             <p className="mt-2 mb-8 text-muted-foreground">
-              নিচের ফর্মটি পূরণ করুন — আমাদের টিম আপনার সাথে যোগাযোগ করবে।
+              নিচের ফর্মটি পূরণ করুন - আমাদের টিম আপনার সাথে যোগাযোগ করবে।
             </p>
             <LeadForm services={services} source={source} />
           </div>

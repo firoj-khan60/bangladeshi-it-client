@@ -30,7 +30,7 @@ const STEPS: Step[] = [
   {
     step: "Plan",
     title: "A Clear Scope, Upfront",
-    description: "Features, timeline and a fixed quote — agreed together before work begins.",
+    description: "Features, timeline and a fixed quote - agreed together before work begins.",
     icon: ClipboardList,
   },
   {
@@ -42,7 +42,7 @@ const STEPS: Step[] = [
   {
     step: "Build",
     title: "Progress You Can See",
-    description: "Weekly updates and a live staging link from day one — no black boxes.",
+    description: "Weekly updates and a live staging link from day one - no black boxes.",
     icon: Code2,
   },
   {
@@ -106,7 +106,7 @@ export default function ProcessSection() {
 
   return (
     <section className="relative isolate overflow-hidden bg-background py-20 md:py-28">
-      {/* Soft pastel wash, like the reference — built from brand tokens */}
+      {/* Soft pastel wash, like the reference - built from brand tokens */}
       <div aria-hidden className="absolute inset-0 -z-10">
         <div className="absolute -left-40 top-10 h-[480px] w-[480px] rounded-full bg-brand-blue/15 blur-[140px]" />
         <div className="absolute -right-40 bottom-0 h-[480px] w-[480px] rounded-full bg-primary/15 blur-[140px]" />
@@ -116,7 +116,7 @@ export default function ProcessSection() {
       <div className="container mx-auto px-6">
         <SectionHeading
           eyebrow="How We Work"
-          title="From Idea to Launch — and Beyond"
+          title="From Idea to Launch - and Beyond"
           subtitle="Six clear steps, so you always know what's happening and what comes next."
           className="mb-14 md:mb-16"
         />

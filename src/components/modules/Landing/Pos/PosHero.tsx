@@ -155,13 +155,13 @@ export default function PosHero({ phone }: { phone?: string | null }) {
           </span>
 
           <h1 data-reveal className="mt-6 text-4xl font-bold leading-[1.25] tracking-tight md:text-5xl lg:text-[3.4rem]">
-            বিক্রি, স্টক, হিসাব —{" "}
+            বিক্রি, স্টক, হিসাব -{" "}
             <span className="text-highlight">পুরো ব্যবসা</span> এক{" "}
             <span className="text-brand-red">POS</span> Software-এ
           </h1>
 
           <p data-reveal className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            খাতা-কলম আর আলাদা আলাদা Excel বাদ দিন। Sale, Purchase, Stock, Expense, Return, Accounting ও HRM —
+            খাতা-কলম আর আলাদা আলাদা Excel বাদ দিন। Sale, Purchase, Stock, Expense, Return, Accounting ও HRM -
             সব এক Dashboard থেকে চালান, আর প্রতিদিনের লাভ-ক্ষতি দেখুন এক নজরে।
           </p>
 

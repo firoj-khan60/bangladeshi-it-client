@@ -24,7 +24,7 @@ const FEATURES = [
   { title: "Modern Stack", description: "Current, well-supported tech designed to scale with you.", icon: Code2 },
   { title: "Reliable & Secure", description: "Security and stability are part of the build, not an afterthought.", icon: ShieldCheck },
   { title: "24/7 Support", description: "We're here after launch, not just before it.", icon: Headphones },
-  { title: "Transparent Pricing", description: "Clear scopes and quotes upfront — no surprise invoices.", icon: Wallet },
+  { title: "Transparent Pricing", description: "Clear scopes and quotes upfront - no surprise invoices.", icon: Wallet },
   { title: "You Own It", description: "Full source and credentials handed over. No lock-in, ever.", icon: FileCheck2 },
 ];
 
@@ -73,7 +73,7 @@ export default function WhyUs() {
             </div>
             <p data-reveal className="mt-6 text-lg leading-relaxed text-muted-foreground">
               Great software is only half the job. Here&apos;s what working with us actually feels
-              like — before, during and long after launch.
+              like - before, during and long after launch.
             </p>
             <dl
               ref={statsRef}

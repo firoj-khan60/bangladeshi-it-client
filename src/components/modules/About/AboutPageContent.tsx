@@ -34,15 +34,15 @@ const STATS = [
 
 const VALUES = [
   { icon: Handshake, title: "Partners, not vendors", text: "We treat your business like our own and stay with you long after launch." },
-  { icon: Wallet, title: "Transparent pricing", text: "Clear scopes and quotes upfront — no hidden costs, no surprise invoices." },
+  { icon: Wallet, title: "Transparent pricing", text: "Clear scopes and quotes upfront - no hidden costs, no surprise invoices." },
   { icon: FileCheck2, title: "You own everything", text: "Full source code, accounts and credentials are handed over. No lock-in." },
-  { icon: ShieldCheck, title: "Quality & security", text: "Reliable, secure and fast by default — never an afterthought." },
+  { icon: ShieldCheck, title: "Quality & security", text: "Reliable, secure and fast by default - never an afterthought." },
   { icon: MapPin, title: "Local understanding", text: "We know how Bangladeshi customers buy, pay and communicate." },
   { icon: Headphones, title: "Support that answers", text: "Real people on phone and WhatsApp when you need help." },
 ];
 
 const STEPS = [
-  { icon: Search, title: "Discover", text: "We listen first — your business, your customers and what success looks like." },
+  { icon: Search, title: "Discover", text: "We listen first - your business, your customers and what success looks like." },
   { icon: Lightbulb, title: "Plan", text: "A clear scope, timeline and quote, so you know exactly what you're getting." },
   { icon: Hammer, title: "Build", text: "Design and development with regular updates and demos along the way." },
   { icon: Rocket, title: "Launch & grow", text: "Go live with training and support, then keep improving together." },
@@ -76,7 +76,7 @@ function AboutHero() {
           </h1>
           <p data-reveal className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
             Bangladeshi IT is a software and digital agency. For over seven years we&apos;ve helped shops,
-            startups and established companies go online, run smarter and grow faster — with websites,
+            startups and established companies go online, run smarter and grow faster - with websites,
             business software and marketing that actually work.
           </p>
           <div data-reveal className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -111,7 +111,7 @@ function AboutHero() {
               <div aria-hidden className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent" />
               <p className="absolute bottom-5 left-5 right-5 flex items-center gap-2 text-sm font-semibold text-white">
                 <span className="h-2 w-2 rounded-full bg-brand-red" />
-                Designing, building & supporting — every day.
+                Designing, building & supporting - every day.
               </p>
             </div>
 
@@ -167,11 +167,11 @@ function StoryAndMission() {
           <div data-reveal className="mt-6 space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg">
             <p>
               We started with a simple belief: every business deserves technology that works as hard as they
-              do — not just the ones with big budgets.
+              do - not just the ones with big budgets.
             </p>
             <p>
               Too many businesses were stuck with slow websites, spreadsheets that never balanced and
-              marketing that burned money without results. So we set out to fix that — building online
+              marketing that burned money without results. So we set out to fix that - building online
               stores, business software and campaigns that are simple to use and built to last.
             </p>
             <p>
@@ -190,7 +190,7 @@ function StoryAndMission() {
               </span>
               <h3 className="mt-6 text-xl font-bold text-foreground">Our Mission</h3>
               <p className="mt-3 leading-relaxed text-muted-foreground">
-                To make reliable, modern technology accessible to every business — not just the ones with
+                To make reliable, modern technology accessible to every business - not just the ones with
                 big budgets.
               </p>
             </TiltCard>
@@ -202,7 +202,7 @@ function StoryAndMission() {
               </span>
               <h3 className="mt-6 text-xl font-bold text-foreground">Our Vision</h3>
               <p className="mt-3 leading-relaxed text-muted-foreground">
-                To be the technology partner Bangladeshi businesses trust most — at home and on the global
+                To be the technology partner Bangladeshi businesses trust most - at home and on the global
                 stage.
               </p>
             </TiltCard>

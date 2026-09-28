@@ -192,35 +192,6 @@ const LoginForm = ({ redirectPath }: LoginFormProps) => {
           Sign in with Google
         </Button>
 
-        <div className="mt-6 pt-6 border-t border-dashed space-y-3">
-          <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider text-center">
-            Demo Credentials
-          </p>
-          <div className="flex gap-3">
-            <Button
-              type="button"
-              variant="secondary"
-              className="flex-1 text-xs h-9 bg-blue-50 text-blue-700 hover:bg-blue-100 border border-blue-200"
-              onClick={() => {
-                form.setFieldValue("email", "superadmin@gmail.com");
-                form.setFieldValue("password", "password1234");
-              }}
-            >
-              Login as Admin
-            </Button>
-            <Button
-              type="button"
-              variant="secondary"
-              className="flex-1 text-xs h-9 bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200"
-              onClick={() => {
-                form.setFieldValue("email", "user@gmail.com");
-                form.setFieldValue("password", "password1234");
-              }}
-            >
-              Login as User
-            </Button>
-          </div>
-        </div>
       </CardContent>
 
       <CardFooter className="justify-center border-t pt-4">

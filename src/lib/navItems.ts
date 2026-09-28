@@ -73,6 +73,11 @@ export const adminNavItems: NavSection[] = [
         href: "/admin/dashboard/client-logos",
         icon: "Images",
       },
+      {
+        title: "Testimonials",
+        href: "/admin/dashboard/testimonials",
+        icon: "MessageSquareQuote",
+      },
     ],
   },
   {

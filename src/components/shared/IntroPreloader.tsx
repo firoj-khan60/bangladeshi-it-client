@@ -4,11 +4,11 @@ import { useLayoutEffect, useRef, useState, type CSSProperties } from "react";
 import gsap from "gsap";
 
 /**
- * IntroPreloader — "Big Bang Cinematic"
- * Phase 1: Singularity — logo is born from a glowing point
- * Phase 2: Tension       — glow + logo breathe and grow
- * Phase 3: Big Bang      — explosion, flash, shockwaves, nebula burst
- * Phase 4: Cosmic settle — universe fades, site revealed
+ * IntroPreloader - "Big Bang Cinematic"
+ * Phase 1: Singularity - logo is born from a glowing point
+ * Phase 2: Tension       - glow + logo breathe and grow
+ * Phase 3: Big Bang      - explosion, flash, shockwaves, nebula burst
+ * Phase 4: Cosmic settle - universe fades, site revealed
  *
  * Plays once per browser session (gated by sessionStorage) so repeat
  * navigations inside the same visit never replay it.
@@ -336,7 +336,7 @@ export default function IntroPreloader() {
       .to(glowEl, { scale: 1, opacity: 0.4, duration: 0.65, ease: "power2.out" }, "-=.28")
       .to(center, { scale: 0.68, duration: 1.9, ease: "power1.inOut" })
       .to(glowEl, { scale: 4.4, opacity: 0.95, duration: 1.7, ease: "power1.inOut" }, "-=1.7")
-      // Hold — logo sits still at the closer, larger size so "Bangladeshi IT"
+      // Hold - logo sits still at the closer, larger size so "Bangladeshi IT"
       // is legible right before the implosion/explosion.
       .to(center, { scale: 0.48, duration: 0.18, ease: "power2.in" }, "+=.6")
       .to(glowEl, { scale: 2.8, opacity: 0.85, duration: 0.18, ease: "power2.in" }, "<")

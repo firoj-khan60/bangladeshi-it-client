@@ -7,9 +7,15 @@ export const getSiteSettings = async () => {
   try {
     return await httpClient.get<ISiteSetting>("/site-settings");
   } catch (error: any) {
-    throw new Error(
-      error?.response?.data?.message || "Failed to fetch site settings",
+    console.error(
+      "Error fetching site settings:",
+      error?.response?.data?.message || error?.message || error,
     );
+    return {
+      success: false,
+      message: error?.response?.data?.message || "Failed to fetch site settings",
+      data: undefined,
+    };
   }
 };
 

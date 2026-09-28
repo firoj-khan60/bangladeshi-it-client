@@ -27,13 +27,13 @@
   --ring: #066938;
   /* Secondary brand hue (blue) for gradients/3D alongside primary green */
   --brand-blue: oklch(0.55 0.19 262);
-  /* Brand red — the "Deshi" in the wordmark */
+  /* Brand red - the "Deshi" in the wordmark */
   --brand-red: #eb2127;
-  /* Brand green for text/icons — #066938 is too dark to read on the dark theme */
+  /* Brand green for text/icons - #066938 is too dark to read on the dark theme */
   --highlight: #066938;
   /* Warm "city lights" on the hero globe */
   --city-light: oklch(0.78 0.15 70);
-  /* Hero globe surface — same in both modes (a planet reads as dark) */
+  /* Hero globe surface - same in both modes (a planet reads as dark) */
   --globe-land: oklch(0.58 0.1 170);
   --globe-ocean: oklch(0.2 0.05 255);
   --globe-arc: oklch(0.98 0.01 200);
@@ -243,7 +243,7 @@
   animation: float-y 6s ease-in-out infinite;
 }
 
-/* Solid deep-green "forest" surface (Shopify-style) — identical in light and dark
+/* Solid deep-green "forest" surface (Shopify-style) - identical in light and dark
    mode. Scoped: it redefines the theme tokens, so every token-based child
    (text, mockups, buttons) re-colors itself inside it. */
 .theme-forest {
@@ -308,7 +308,7 @@ html.lenis body {
   pointer-events: none;
 }
 
-/* POS receipt — 80mm thermal printer output */
+/* POS receipt - 80mm thermal printer output */
 @media print {
   @page {
     size: 80mm auto;

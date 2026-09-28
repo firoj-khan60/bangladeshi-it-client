@@ -35,7 +35,7 @@ const SERVICES: Service[] = [
   {
     title: "E-commerce Solutions",
     description:
-      "Full online storefronts — product catalog, cart, checkout and an order dashboard — tailored to your niche so you can start selling from day one.",
+      "Full online storefronts - product catalog, cart, checkout and an order dashboard - tailored to your niche so you can start selling from day one.",
     icon: ShoppingCart,
     screen: "Shop the new collection",
     image: "/Fashion.jpg",
@@ -43,14 +43,14 @@ const SERVICES: Service[] = [
   {
     title: "Web Development",
     description:
-      "Fast, secure websites and web apps that don't just look great — they perform, convert and scale with your business.",
+      "Fast, secure websites and web apps that don't just look great - they perform, convert and scale with your business.",
     icon: Globe,
     screen: "Websites that convert",
   },
   {
     title: "Software Development",
     description:
-      "Custom systems — CRM, ERP, POS, HRM and internal tools — built around the way your team actually works.",
+      "Custom systems - CRM, ERP, POS, HRM and internal tools - built around the way your team actually works.",
     icon: Terminal,
     screen: "Your workflow, automated",
   },
@@ -64,7 +64,7 @@ const SERVICES: Service[] = [
   {
     title: "Digital Marketing",
     description:
-      "Data-driven campaigns across search, social and paid channels that bring in customers — and show you exactly what's working.",
+      "Data-driven campaigns across search, social and paid channels that bring in customers - and show you exactly what's working.",
     icon: Megaphone,
     screen: "Campaigns that pay back",
   },
@@ -85,7 +85,7 @@ const SERVICES: Service[] = [
   {
     title: "SEO & Content Writing",
     description:
-      "Technical SEO and content that gets found on Google — and reads well once it is.",
+      "Technical SEO and content that gets found on Google - and reads well once it is.",
     icon: Search,
     screen: "Rank on page one",
   },
@@ -110,7 +110,7 @@ const CARD_STYLE: "forest" | "default" = "forest";
 /** How far (px) a covered card slides up so its title peeks above the next one. */
 const PEEK = 88;
 
-/** Decorative device mockup — browser + phone — built from theme tokens. */
+/** Decorative device mockup - browser + phone - built from theme tokens. */
 function ServiceVisual({ service, accent }: { service: Service; accent: string }) {
   const { icon: Icon, screen, image } = service;
   return (

@@ -98,7 +98,7 @@ interface LeadFormProps {
   services: string[];
   /** Page identifier stored with the lead, e.g. "tracking-setup" or "contact". */
   source: string;
-  /** UI language — landing pages are Bangla, the rest of the site English. */
+  /** UI language - landing pages are Bangla, the rest of the site English. */
   locale?: keyof typeof TEXT;
 }
 
@@ -310,7 +310,7 @@ export default function LeadForm({ services, source, locale = "bn" }: LeadFormPr
         />
       </div>
 
-      {/* Honeypot — hidden from people, visible to naive bots */}
+      {/* Honeypot - hidden from people, visible to naive bots */}
       <div aria-hidden className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
         <label htmlFor="lead-company">Company</label>
         <input

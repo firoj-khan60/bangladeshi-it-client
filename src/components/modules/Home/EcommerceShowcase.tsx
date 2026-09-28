@@ -19,7 +19,7 @@ const CATEGORIES = [
 const FEATURES = [
   "Product catalog, cart & checkout ready on day one",
   "Order, inventory and customer dashboard included",
-  "Designed around your niche — not a generic template",
+  "Designed around your niche - not a generic template",
 ];
 
 export default function EcommerceShowcase() {
@@ -46,7 +46,7 @@ export default function EcommerceShowcase() {
               align="left"
               eyebrow="E-commerce Solution"
               title="Launch an Online Store Built for Your Niche"
-              subtitle="Fashion, organic food, electronics, skincare and more — pick your category and we'll tailor the storefront to how your customers actually shop."
+              subtitle="Fashion, organic food, electronics, skincare and more - pick your category and we'll tailor the storefront to how your customers actually shop."
             />
           </div>
 
@@ -112,7 +112,7 @@ export default function EcommerceShowcase() {
                   <ShoppingBag className="h-4 w-4 text-muted-foreground" aria-hidden />
                 </div>
 
-                {/* Banner — kept at its native 1690×600 ratio so the artwork isn't cropped */}
+                {/* Banner - kept at its native 1690×600 ratio so the artwork isn't cropped */}
                 <div className="relative aspect-[1690/600] w-full bg-muted">
                   {CATEGORIES.map(({ key, label, image }, i) => (
                     <Image

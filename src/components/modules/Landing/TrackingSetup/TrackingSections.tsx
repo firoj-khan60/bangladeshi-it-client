@@ -70,7 +70,6 @@ export function WhyTracking() {
     <section className="px-4 py-20 md:px-8 md:py-28">
       <Reveal className="container mx-auto">
         <SectionTitle
-          eyebrow="কেন দরকার"
           title={
             <>
               কেন সঠিক <span className="text-highlight">Tracking</span> গুরুত্বপূর্ণ?
@@ -82,7 +81,7 @@ export function WhyTracking() {
         <div className="grid gap-6 lg:grid-cols-5">
           {/* Pain points */}
           <div data-reveal className="rounded-3xl border border-brand-red/25 bg-brand-red/5 p-6 lg:col-span-2 md:p-8">
-            <p className="text-lg font-bold">Tracking ভুল থাকলে যা হয় —</p>
+            <p className="text-lg font-bold">Tracking ভুল থাকলে যা হয় -</p>
             <ul className="mt-5 space-y-4">
               {PROBLEMS.map((problem) => (
                 <li key={problem} className="flex items-start gap-3 text-muted-foreground">
@@ -141,14 +140,11 @@ export function BusinessTypes() {
     <section className="bg-card/40 px-4 py-20 md:px-8 md:py-28">
       <Reveal className="container mx-auto grid gap-10 lg:grid-cols-5">
         <div className="lg:col-span-3">
-          <p data-reveal className="text-sm font-semibold uppercase tracking-[0.2em] text-highlight">
-            সবার জন্য
-          </p>
-          <h2 data-reveal className="mt-3 text-3xl font-bold leading-snug tracking-tight md:text-4xl">
+          <h2 data-reveal className="text-3xl font-bold leading-snug tracking-tight md:text-4xl">
             আপনার <span className="text-highlight">Business</span> যেকোনো ধরনের হোক, আমরা আছি আপনার সাথে।
           </h2>
           <p data-reveal className="mt-4 text-lg text-muted-foreground">
-            E-commerce, Service Business, Social Media বা Google — সব ধরনের Business-এর জন্য সঠিক Tracking Setup।
+            E-commerce, Service Business, Social Media বা Google - সব ধরনের Business-এর জন্য সঠিক Tracking Setup।
           </p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -198,9 +194,8 @@ export function ProcessSteps() {
     <section className="px-4 py-20 md:px-8 md:py-28">
       <Reveal className="container mx-auto">
         <SectionTitle
-          eyebrow="কাজের ধাপ"
           title="আমরা যেভাবে কাজ করি"
-          subtitle="৫টি পরিষ্কার ধাপে — প্রতিটি ধাপে আপনি জানবেন কী হচ্ছে।"
+          subtitle="৫টি পরিষ্কার ধাপে - প্রতিটি ধাপে আপনি জানবেন কী হচ্ছে।"
         />
         <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {STEPS.map(({ icon: Icon, title, text }, i) => (
@@ -226,8 +221,8 @@ export function ProcessSteps() {
 const PROMISES = [
   { icon: ClipboardCheck, title: "ফ্রি অডিট", text: "কাজ শুরুর আগে বর্তমান Tracking-এর সমস্যা খুঁজে বের করে জানাই।" },
   { icon: BadgeCheck, title: "প্রমাণসহ ডেলিভারি", text: "Test Events ও Debug View-এর স্ক্রিনশটসহ কাজ বুঝিয়ে দিই।" },
-  { icon: KeyRound, title: "আপনার মালিকানা", text: "সব অ্যাকাউন্ট ও অ্যাক্সেস আপনার নামেই থাকে — কোনো লক-ইন নেই।" },
-  { icon: FileBarChart, title: "সহজ ভাষায় রিপোর্ট", text: "কোন Event কী কাজ করে — বাংলায় বুঝিয়ে দিই।" },
+  { icon: KeyRound, title: "আপনার মালিকানা", text: "সব অ্যাকাউন্ট ও অ্যাক্সেস আপনার নামেই থাকে - কোনো লক-ইন নেই।" },
+  { icon: FileBarChart, title: "সহজ ভাষায় রিপোর্ট", text: "কোন Event কী কাজ করে - বাংলায় বুঝিয়ে দিই।" },
 ];
 
 export function WhyUs() {
@@ -235,7 +230,6 @@ export function WhyUs() {
     <section className="bg-card/40 px-4 py-20 md:px-8 md:py-28">
       <Reveal className="container mx-auto">
         <SectionTitle
-          eyebrow="কেন আমরা"
           title={
             <>
               কেন <span className="text-highlight">Bangla</span>
@@ -263,15 +257,15 @@ export function WhyUs() {
 
 const FAQS: FaqItem[] = [
   {
-    q: "Pixel, GTM, GA4 ও Server-Side Tracking — এগুলো কেন দরকার?",
+    q: "Pixel, GTM, GA4 ও Server-Side Tracking - এগুলো কেন দরকার?",
     a: "Pixel ও GA4 আপনার Website-এর Visitor কী করছে তা মাপে, GTM দিয়ে সব Tag এক জায়গা থেকে নিয়ন্ত্রণ করা যায়, আর Server-Side Tracking (CAPI) iOS ও Ad-blocker-এর কারণে হারিয়ে যাওয়া Data ফেরত আনে। ফলে Ads আরও ভালোভাবে Optimize হয়।",
   },
   {
-    q: "আমার শুধু Facebook Page আছে, Website নেই — আমি কি এটা নিতে পারব?",
+    q: "আমার শুধু Facebook Page আছে, Website নেই - আমি কি এটা নিতে পারব?",
     a: "Website ছাড়াও Lead Form, Messenger ও WhatsApp Campaign-এর Tracking সেটআপ করা যায়। অডিটে আপনার অবস্থা দেখে আমরা সঠিক পরামর্শ দেব।",
   },
   {
-    q: "আমার Website-এ আগে থেকেই Pixel/GTM আছে — আবার নতুন করে Setup দরকার?",
+    q: "আমার Website-এ আগে থেকেই Pixel/GTM আছে - আবার নতুন করে Setup দরকার?",
     a: "সবসময় নয়। আমরা প্রথমে ফ্রি অডিট করে দেখি কোন Event ঠিক আছে আর কোনটা ভুল বা ডাবল হচ্ছে। শুধু যা দরকার সেটুকুই ঠিক করি।",
   },
   {
@@ -284,7 +278,7 @@ const FAQS: FaqItem[] = [
   },
   {
     q: "কাজ শেষ হতে কত সময় লাগে?",
-    a: "Website ও প্রয়োজনের উপর নির্ভর করে। অডিটের পর আমরা নির্দিষ্ট সময় ও খরচ জানিয়ে দিই — কাজ শুরুর আগেই।",
+    a: "Website ও প্রয়োজনের উপর নির্ভর করে। অডিটের পর আমরা নির্দিষ্ট সময় ও খরচ জানিয়ে দিই - কাজ শুরুর আগেই।",
   },
 ];
 
@@ -310,7 +304,7 @@ export function FaqAndForm() {
   return (
     <FaqAndLeadSection
       faqs={FAQS}
-      includesTitle="ফ্রি অডিটে যা পাবেন —"
+      includesTitle="ফ্রি অডিটে যা পাবেন -"
       includes={AUDIT_INCLUDES}
       formTitle={
         <>

@@ -29,19 +29,10 @@ const SOLUTIONS: Solution[] = [
     key: "pos",
     name: "POS",
     full: "Point of Sale",
-    description: "Fast billing, barcode scanning, receipt printing and live stock — built for busy counters.",
+    description: "Fast billing, barcode scanning, receipt printing and live stock - built for busy counters.",
     icon: Receipt,
     metrics: [["Today's sales", "৳ 84.2k"], ["Invoices", "126"], ["Low stock", "12"]],
     bars: [40, 65, 50, 80, 70, 95, 85],
-  },
-  {
-    key: "erp",
-    name: "ERP",
-    full: "Enterprise Resource Planning",
-    description: "Purchasing, inventory, accounts and reporting in one system instead of ten spreadsheets.",
-    icon: Boxes,
-    metrics: [["Revenue", "৳ 2.4M"], ["Purchase orders", "38"], ["Warehouses", "3"]],
-    bars: [55, 60, 72, 68, 84, 78, 92],
   },
   {
     key: "crm",
@@ -56,10 +47,19 @@ const SOLUTIONS: Solution[] = [
     key: "hrm",
     name: "HRM",
     full: "Human Resource Management",
-    description: "Attendance, leave, payroll and employee records — handled without the paperwork.",
+    description: "Attendance, leave, payroll and employee records - handled without the paperwork.",
     icon: IdCard,
     metrics: [["Present today", "142"], ["On leave", "6"], ["Payroll run", "Done"]],
     bars: [80, 82, 78, 85, 83, 88, 86],
+  },
+  {
+    key: "erp",
+    name: "ERP",
+    full: "Enterprise Resource Planning",
+    description: "Purchasing, inventory, accounts and reporting in one system instead of ten spreadsheets.",
+    icon: Boxes,
+    metrics: [["Revenue", "৳ 2.4M"], ["Purchase orders", "38"], ["Warehouses", "3"]],
+    bars: [55, 60, 72, 68, 84, 78, 92],
   },
 ];
 
@@ -101,7 +101,7 @@ export default function SolutionsSection() {
         <SectionHeading
           eyebrow="Business Solutions"
           title="Ready-Made Systems to Run Your Business"
-          subtitle="Proven POS, ERP, CRM and HRM software — customised to your workflow and handed over with full ownership."
+          subtitle="Proven POS, CRM, HRM and ERP software - customised to your workflow and handed over with full ownership."
           className="mb-12"
         />
 

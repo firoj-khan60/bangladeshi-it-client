@@ -22,7 +22,7 @@ export const leadColumns: ColumnDef<ILead>[] = [
       <div className="flex flex-col">
         <span className="font-medium">{row.original.name}</span>
         <span className="text-xs text-muted-foreground">
-          {row.original.businessName || row.original.email || "—"}
+          {row.original.businessName || row.original.email || "-"}
         </span>
       </div>
     ),

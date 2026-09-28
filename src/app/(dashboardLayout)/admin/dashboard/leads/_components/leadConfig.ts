@@ -15,4 +15,4 @@ export const LEAD_SOURCE_OPTIONS = [
 ];
 
 export const getSourceLabel = (source: string | null) =>
-  LEAD_SOURCE_OPTIONS.find((option) => option.value === source)?.label ?? source ?? "—";
+  LEAD_SOURCE_OPTIONS.find((option) => option.value === source)?.label ?? source ?? "-";

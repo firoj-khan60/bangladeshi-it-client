@@ -17,7 +17,7 @@ const YEARS = 7;
 
 const PILLARS = [
   { title: "Build", description: "Websites, online stores and mobile apps.", icon: Globe },
-  { title: "Automate", description: "POS, ERP, CRM and HRM software.", icon: LayoutDashboard },
+  { title: "Automate", description: "POS, CRM, HRM and ERP software.", icon: LayoutDashboard },
   { title: "Grow", description: "Digital marketing, SEO and social media.", icon: TrendingUp },
 ];
 
@@ -62,7 +62,7 @@ export default function AboutSection() {
             <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
               <span className="font-semibold text-foreground">Bangladeshi IT</span>{" "}is a software and
               digital agency that helps businesses go online, run smarter and grow faster. For over
-              seven years we&apos;ve partnered with shops, startups and established companies —
+              seven years we&apos;ve partnered with shops, startups and established companies -
               building the websites, business systems and marketing that keep them moving forward.
             </p>
             <Link
@@ -79,7 +79,7 @@ export default function AboutSection() {
 
         {/* Bento */}
         <Reveal className="mt-14 grid gap-5 md:grid-cols-2 lg:mt-16 lg:grid-cols-3" stagger={0.1}>
-          {/* Experience — tall brand-green card (same look in light and dark mode) */}
+          {/* Experience - tall brand-green card (same look in light and dark mode) */}
           <div data-reveal className="md:row-span-2">
             <TiltCard
               max={5}
@@ -150,7 +150,7 @@ export default function AboutSection() {
               </span>
               <h3 className="mt-6 text-xl font-bold text-foreground">Our Mission</h3>
               <p className="mt-3 leading-relaxed text-muted-foreground">
-                To make reliable, modern technology accessible to every business — not just the ones
+                To make reliable, modern technology accessible to every business - not just the ones
                 with big budgets.
               </p>
             </TiltCard>
@@ -164,13 +164,13 @@ export default function AboutSection() {
               </span>
               <h3 className="mt-6 text-xl font-bold text-foreground">Our Vision</h3>
               <p className="mt-3 leading-relaxed text-muted-foreground">
-                To be the technology partner Bangladeshi businesses trust most — at home and on the
+                To be the technology partner Bangladeshi businesses trust most - at home and on the
                 global stage.
               </p>
             </TiltCard>
           </div>
 
-          {/* What we do — wide card */}
+          {/* What we do - wide card */}
           <div data-reveal className="md:col-span-1 lg:col-span-2">
             <div className="h-full rounded-[2rem] border border-border bg-muted/50 p-8">
               <p className="text-sm font-bold uppercase tracking-[0.25em] text-muted-foreground">

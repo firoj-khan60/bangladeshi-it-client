@@ -59,14 +59,14 @@ const PROBLEMS = [
   "দিন শেষে ক্যাশ মেলাতে ঘণ্টার পর ঘণ্টা লাগে",
   "কোন পণ্য কতটা স্টকে আছে সঠিক জানা যায় না",
   "বাকি, খরচ আর রিটার্নের হিসাব হারিয়ে যায়",
-  "আসল লাভ কত হলো — মাস শেষেও বোঝা কঠিন",
+  "আসল লাভ কত হলো - মাস শেষেও বোঝা কঠিন",
 ];
 
 const SOLUTIONS = [
   "কয়েক ক্লিকে বিক্রি, সাথে সাথে Invoice",
   "প্রতিটি Sale ও Purchase-এ Stock নিজে থেকেই আপডেট",
-  "Expense, Return ও বাকি — সব আলাদা করে ট্র্যাক",
-  "Dashboard-এ Revenue ও Profit — আজ, এই সপ্তাহ, এই মাস",
+  "Expense, Return ও বাকি - সব আলাদা করে ট্র্যাক",
+  "Dashboard-এ Revenue ও Profit - আজ, এই সপ্তাহ, এই মাস",
 ];
 
 export function BeforeAfter() {
@@ -74,7 +74,6 @@ export function BeforeAfter() {
     <section className="px-4 py-20 md:px-8 md:py-28">
       <Reveal className="container mx-auto">
         <SectionTitle
-          eyebrow="কেন দরকার"
           title={
             <>
               খাতা-কলম থেকে <span className="text-highlight">Smart POS</span>-এ
@@ -85,7 +84,7 @@ export function BeforeAfter() {
 
         <div className="grid gap-6 md:grid-cols-2">
           <div data-reveal className="rounded-3xl border border-brand-red/25 bg-brand-red/5 p-6 md:p-8">
-            <p className="text-lg font-bold">POS ছাড়া —</p>
+            <p className="text-lg font-bold">POS ছাড়া -</p>
             <ul className="mt-5 space-y-4">
               {PROBLEMS.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-muted-foreground">
@@ -97,7 +96,7 @@ export function BeforeAfter() {
           </div>
 
           <div data-reveal className="rounded-3xl bg-primary p-6 text-primary-foreground shadow-2xl shadow-primary/25 md:p-8">
-            <p className="text-lg font-bold">আমাদের POS দিয়ে —</p>
+            <p className="text-lg font-bold">আমাদের POS দিয়ে -</p>
             <ul className="mt-5 space-y-4">
               {SOLUTIONS.map((item) => (
                 <li key={item} className="flex items-start gap-3">
@@ -135,10 +134,9 @@ export function Modules() {
     <section className="bg-card/40 px-4 py-20 md:px-8 md:py-28">
       <Reveal className="container mx-auto" stagger={0.05}>
         <SectionTitle
-          eyebrow="ফিচার"
           title={
             <>
-              ব্যবসা চালাতে যা লাগে — <span className="text-highlight">সব এক জায়গায়</span>
+              ব্যবসা চালাতে যা লাগে - <span className="text-highlight">সব এক জায়গায়</span>
             </>
           }
           subtitle="আলাদা আলাদা Software কেনার দরকার নেই। প্রতিটি Module একে অপরের সাথে যুক্ত।"
@@ -166,10 +164,10 @@ export function Modules() {
 /* ---------- dashboard highlight ---------- */
 
 const INSIGHTS = [
-  "Revenue, Profit, Sale Return ও Purchase Return — এক নজরে",
-  "আজ, গত ৭ দিন, এই মাস বা এই বছর — যেকোনো সময়ের হিসাব",
-  "Best Seller পণ্য — কোনটা বেশি বিক্রি হচ্ছে",
-  "Yearly Report — মাসভিত্তিক কেনা ও বিক্রির তুলনা",
+  "Revenue, Profit, Sale Return ও Purchase Return - এক নজরে",
+  "আজ, গত ৭ দিন, এই মাস বা এই বছর - যেকোনো সময়ের হিসাব",
+  "Best Seller পণ্য - কোনটা বেশি বিক্রি হচ্ছে",
+  "Yearly Report - মাসভিত্তিক কেনা ও বিক্রির তুলনা",
 ];
 
 export function DashboardInsights() {
@@ -177,10 +175,7 @@ export function DashboardInsights() {
     <section className="px-4 py-20 md:px-8 md:py-28">
       <Reveal className="container mx-auto grid items-center gap-12 lg:grid-cols-2">
         <div>
-          <p data-reveal className="text-sm font-semibold uppercase tracking-[0.2em] text-highlight">
-            Dashboard
-          </p>
-          <h2 data-reveal className="mt-3 text-3xl font-bold leading-snug tracking-tight md:text-4xl">
+          <h2 data-reveal className="text-3xl font-bold leading-snug tracking-tight md:text-4xl">
             দোকানে না থেকেও জানুন <span className="text-highlight">ব্যবসা কেমন চলছে</span>
           </h2>
           <p data-reveal className="mt-4 text-lg text-muted-foreground">
@@ -234,7 +229,7 @@ export function PosProcess() {
   return (
     <section className="bg-card/40 px-4 py-20 md:px-8 md:py-28">
       <Reveal className="container mx-auto">
-        <SectionTitle eyebrow="শুরু করা সহজ" title="৪ ধাপে আপনার POS চালু" />
+        <SectionTitle title="৪ ধাপে আপনার POS চালু" />
         <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {STEPS.map(({ icon: Icon, title, text }, i) => (
             <li key={title} data-reveal className="relative rounded-3xl border bg-background p-6">
@@ -255,7 +250,7 @@ export function PosProcess() {
           className="mt-10 flex flex-col items-center justify-center gap-3 text-center text-sm font-medium text-muted-foreground sm:flex-row sm:gap-6"
         >
           <span className="flex items-center gap-2">
-            <MonitorSmartphone className="h-4 w-4 text-highlight" /> Computer, Laptop, Tab ও Mobile — সবখান থেকে
+            <MonitorSmartphone className="h-4 w-4 text-highlight" /> Computer, Laptop, Tab ও Mobile - সবখান থেকে
           </span>
         </div>
       </Reveal>
@@ -267,11 +262,11 @@ export function PosProcess() {
 
 const FAQS: FaqItem[] = [
   {
-    q: "আমার ব্যবসা ছোট — POS কি আমার জন্য?",
-    a: "হ্যাঁ। একটি দোকান থেকে শুরু করে একাধিক শাখা বা গোডাউন — সব আকারের ব্যবসার জন্য উপযোগী। যত Module দরকার, ততটুকুই ব্যবহার করবেন।",
+    q: "আমার ব্যবসা ছোট - POS কি আমার জন্য?",
+    a: "হ্যাঁ। একটি দোকান থেকে শুরু করে একাধিক শাখা বা গোডাউন - সব আকারের ব্যবসার জন্য উপযোগী। যত Module দরকার, ততটুকুই ব্যবহার করবেন।",
   },
   {
-    q: "Computer-এ জানা কম — ব্যবহার করতে পারব?",
+    q: "Computer-এ জানা কম - ব্যবহার করতে পারব?",
     a: "Software-টি সহজভাবে বানানো। সেটআপের পর আমরা আপনাকে ও আপনার কর্মীদের হাতে-কলমে শিখিয়ে দিই।",
   },
   {
@@ -303,7 +298,7 @@ const POS_SERVICES = [
 
 const DEMO_INCLUDES = [
   "আপনার ব্যবসার ধরন অনুযায়ী Live ডেমো",
-  "কোন Module আপনার দরকার — পরামর্শ",
+  "কোন Module আপনার দরকার - পরামর্শ",
   "সেটআপ ও ট্রেনিং কীভাবে হবে",
   "আপনার জন্য নির্দিষ্ট প্যাকেজ ও দাম",
 ];
@@ -312,7 +307,7 @@ export function PosFaqAndForm() {
   return (
     <FaqAndLeadSection
       faqs={FAQS}
-      includesTitle="ফ্রি ডেমোতে যা পাবেন —"
+      includesTitle="ফ্রি ডেমোতে যা পাবেন -"
       includes={DEMO_INCLUDES}
       formTitle={
         <>

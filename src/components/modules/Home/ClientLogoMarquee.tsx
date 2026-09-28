@@ -5,7 +5,7 @@ import TrustMarquee from "./TrustMarquee";
 
 /** Fewer logos than this per row leave a gap on wide screens, so short rows are repeated. */
 const MIN_ITEMS_PER_ROW = 8;
-/** Seconds each logo takes to cross — keeps speed constant however many logos a row has. */
+/** Seconds each logo takes to cross - keeps speed constant however many logos a row has. */
 const SECONDS_PER_LOGO = 3.5;
 
 function fillRow(logos: IPublicClientLogo[]) {

@@ -25,7 +25,7 @@ const CONTACT_SERVICES = [ECOMMERCE, ...SERVICES].map((service) => service.title
 const NEXT_STEPS = [
   { icon: MessageSquareReply, title: "We reply quickly", text: "Usually within 24 hours, by phone, WhatsApp or email." },
   { icon: CalendarCheck, title: "Free consultation", text: "A short call to understand your business and goals." },
-  { icon: FileText, title: "Clear proposal", text: "Scope, timeline and price — upfront, no surprises." },
+  { icon: FileText, title: "Clear proposal", text: "Scope, timeline and price - upfront, no surprises." },
 ];
 
 const toTel = (phone: string) => `tel:${phone.replace(/[^\d+]/g, "")}`;
@@ -78,7 +78,7 @@ export default async function ContactPage() {
             Let&apos;s build something <span className="text-highlight">great together</span>
           </h1>
           <p data-reveal className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            Tell us about your project — a new website, an online store, business software or marketing.
+            Tell us about your project - a new website, an online store, business software or marketing.
             We&apos;ll get back to you with a clear plan.
           </p>
 

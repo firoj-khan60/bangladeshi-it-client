@@ -15,9 +15,16 @@ export const getFaqs = async () => {
 export const getPublicFaqs = async () => {
   try {
     return await httpClient.get<IFaqItem[]>("/faqs/public");
-  } catch (error) {
-    console.error("Error fetching public faqs:", error);
-    throw error;
+  } catch (error: any) {
+    console.error(
+      "Error fetching public faqs:",
+      error?.response?.data?.message || error?.message || error,
+    );
+    return {
+      success: false,
+      message: error?.response?.data?.message || "Failed to fetch public faqs",
+      data: [] as IFaqItem[],
+    };
   }
 };
 

@@ -51,8 +51,6 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Blog", href: "/blogs" },
-  { name: "Contact", href: "/contact" },
-  { name: "FAQ", href: "/faq" },
 ];
 
 const Navbar = ({ userInfo, className, siteSettings }: NavbarProps) => {
@@ -145,7 +143,18 @@ const Navbar = ({ userInfo, className, siteSettings }: NavbarProps) => {
           <div className="flex items-center gap-3">
             <ThemeToggle />
 
-            {userInfo ? (
+            <Button
+              asChild
+              size="sm"
+              className="rounded-full px-5 font-bold shadow-md shadow-primary/20 transition-all hover:scale-105 active:scale-95"
+            >
+              <Link href="/contact">
+                Contact Us
+              </Link>
+            </Button>
+
+            {/* Login/Sign-up aren't linked publicly - staff sign in via /login directly */}
+            {userInfo && (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
@@ -208,24 +217,6 @@ const Navbar = ({ userInfo, className, siteSettings }: NavbarProps) => {
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
-            ) : (
-              <div className="flex items-center gap-2">
-                <Button
-                  asChild
-                  variant="ghost"
-                  size="sm"
-                  className="hidden sm:inline-flex font-semibold text-muted-foreground hover:text-foreground"
-                >
-                  <Link href="/login">Login</Link>
-                </Button>
-                <Button
-                  asChild
-                  size="sm"
-                  className="rounded-full px-5 font-bold shadow-md shadow-primary/20 transition-all hover:scale-105 active:scale-95"
-                >
-                  <Link href="/register">Sign up</Link>
-                </Button>
-              </div>
             )}
           </div>
         </nav>
@@ -300,6 +291,14 @@ const Navbar = ({ userInfo, className, siteSettings }: NavbarProps) => {
                           </div>
                         </div>
 
+                        <SheetTrigger asChild>
+                          <Button asChild className="h-12 w-full rounded-xl font-bold">
+                            <Link href="/contact">
+                              Contact Us
+                            </Link>
+                          </Button>
+                        </SheetTrigger>
+
                         <Button
                           asChild
                           variant="outline"
@@ -321,24 +320,13 @@ const Navbar = ({ userInfo, className, siteSettings }: NavbarProps) => {
                         </Button>
                       </div>
                     ) : (
-                      <div className="flex flex-col gap-3">
-                        <div className="grid grid-cols-2 gap-3">
-                          <Button
-                            asChild
-                            variant="outline"
-                            className="h-12 rounded-xl font-bold"
-                          >
-                            <Link href="/login">Login</Link>
-                          </Button>
-                          <Button
-                            asChild
-                            variant="outline"
-                            className="h-12 rounded-xl font-bold"
-                          >
-                            <Link href="/register">Sign up</Link>
-                          </Button>
-                        </div>
-                      </div>
+                      <SheetTrigger asChild>
+                        <Button asChild className="h-12 w-full rounded-xl font-bold">
+                          <Link href="/contact">
+                            Contact Us
+                          </Link>
+                        </Button>
+                      </SheetTrigger>
                     )}
                   </div>
                 </div>

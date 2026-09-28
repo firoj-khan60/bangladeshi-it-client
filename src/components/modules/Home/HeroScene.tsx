@@ -271,7 +271,7 @@ type ArcState = { t: number; speed: number; wait: number; points: THREE.Vector3[
 /**
  * Light streaks that hop between cities: each arc lifts off one hub, curves
  * over the surface and lands on another, drawn as a moving comet (bright head
- * plus a fading tail). When one lands, it re-launches between a new pair —
+ * plus a fading tail). When one lands, it re-launches between a new pair -
  * so the globe keeps zig-zagging with traffic.
  */
 function Arcs({
@@ -316,7 +316,7 @@ function Arcs({
 
   // (Re)build one arc's curve between two random, not-too-close hubs.
   const launch = (i: number) => {
-    // Hub 0 is Dhaka — a good share of the traffic starts from home.
+    // Hub 0 is Dhaka - a good share of the traffic starts from home.
     const pickA = () => (rand() < 0.35 ? hubs[0] : hubs[Math.floor(rand() * hubs.length)]);
     let a = pickA();
     let b = hubs[Math.floor(rand() * hubs.length)];

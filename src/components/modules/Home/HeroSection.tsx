@@ -21,7 +21,7 @@ export default function HeroSection() {
   const rootRef = useRef<HTMLElement>(null);
   const wordRefs = useRef<(HTMLSpanElement | null)[]>([]);
 
-  // Entrance — waits for the one-time IntroPreloader splash to finish so the
+  // Entrance - waits for the one-time IntroPreloader splash to finish so the
   // two animations hand off instead of overlapping.
   useLayoutEffect(() => {
     const root = rootRef.current;
@@ -138,7 +138,7 @@ export default function HeroSection() {
             data-hero-item
             className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-foreground opacity-0 md:text-lg lg:mx-0"
           >
-            From online stores to ERP, POS and mobile apps — we design, build and
+            From online stores to ERP, POS and mobile apps - we design, build and
             support the technology your business runs on, so it performs in the
             real world, not just on paper.
           </p>
