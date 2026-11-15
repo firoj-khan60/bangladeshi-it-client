@@ -3,23 +3,17 @@ import {
   BarChart3,
   Briefcase,
   CheckCircle2,
-  Cpu,
   FileText,
   Globe,
   GraduationCap,
-  Hammer,
   Headphones,
   List,
   MonitorSmartphone,
-  Pill,
   Presentation,
   RotateCcw,
   Settings,
-  Shirt,
   ShoppingBag,
-  ShoppingBasket,
   ShoppingCart,
-  Truck,
   Users,
   UserSquare2,
   Wallet,
@@ -27,31 +21,7 @@ import {
 } from "lucide-react";
 import Reveal from "@/components/shared/motion/Reveal";
 import { FaqAndLeadSection, SectionTitle, type FaqItem } from "../shared";
-
-/* ---------- business types strip ---------- */
-
-const BUSINESSES = [
-  { icon: ShoppingBasket, label: "সুপার শপ" },
-  { icon: Shirt, label: "ফ্যাশন হাউস" },
-  { icon: Cpu, label: "ইলেকট্রনিক্স" },
-  { icon: Pill, label: "ফার্মেসি" },
-  { icon: Hammer, label: "হার্ডওয়্যার" },
-  { icon: Truck, label: "হোলসেল / ডিস্ট্রিবিউটর" },
-];
-
-export function BusinessStrip() {
-  return (
-    <section className="border-y bg-card/40 px-4 py-8">
-      <div className="container mx-auto flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
-        {BUSINESSES.map(({ icon: Icon, label }) => (
-          <span key={label} className="flex items-center gap-2 text-sm font-semibold text-muted-foreground">
-            <Icon className="h-5 w-5 text-highlight" /> {label}
-          </span>
-        ))}
-      </div>
-    </section>
-  );
-}
+import { POS_SERVICES } from "./industries";
 
 /* ---------- before / after ---------- */
 
@@ -287,15 +257,6 @@ const FAQS: FaqItem[] = [
   },
 ];
 
-const POS_SERVICES = [
-  "POS Software (Sale + Stock)",
-  "POS + Accounting",
-  "POS + HRM + Accounting (Full Package)",
-  "একাধিক শাখা / গোডাউনের জন্য POS",
-  "POS + E-commerce Website",
-  "শুধু ডেমো দেখতে চাই",
-];
-
 const DEMO_INCLUDES = [
   "আপনার ব্যবসার ধরন অনুযায়ী Live ডেমো",
   "কোন Module আপনার দরকার - পরামর্শ",
@@ -316,6 +277,9 @@ export function PosFaqAndForm() {
       }
       services={POS_SERVICES}
       source="pos"
+      servicePlaceholder="প্যাকেজ বেছে নিন"
+      notePlaceholder="যেমন: আমার একটি দোকান আছে, প্রায় ৫০০ পণ্য। Sale, Stock ও বাকির হিসাব রাখতে চাই…"
+      submitLabel="ফ্রি ডেমো রিকোয়েস্ট পাঠান"
     />
   );
 }

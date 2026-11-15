@@ -63,6 +63,12 @@ interface FaqAndLeadSectionProps {
   services: string[];
   /** Landing page identifier stored with each lead. */
   source: string;
+  /** Optional lead form copy overrides. */
+  serviceLabel?: string;
+  servicePlaceholder?: string;
+  notePlaceholder?: string;
+  submitLabel?: string;
+  defaultService?: string;
 }
 
 /** FAQ on the left, lead form on the right - the conversion block of every landing page. */
@@ -73,6 +79,7 @@ export function FaqAndLeadSection({
   formTitle,
   services,
   source,
+  ...formCopy
 }: FaqAndLeadSectionProps) {
   return (
     <section className="px-4 py-20 md:px-8 md:py-28">
@@ -120,7 +127,7 @@ export function FaqAndLeadSection({
             <p className="mt-2 mb-8 text-muted-foreground">
               নিচের ফর্মটি পূরণ করুন - আমাদের টিম আপনার সাথে যোগাযোগ করবে।
             </p>
-            <LeadForm services={services} source={source} />
+            <LeadForm services={services} source={source} {...formCopy} />
           </div>
         </Reveal>
       </div>

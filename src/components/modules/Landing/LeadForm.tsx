@@ -100,6 +100,13 @@ interface LeadFormProps {
   source: string;
   /** UI language - landing pages are Bangla, the rest of the site English. */
   locale?: keyof typeof TEXT;
+  /** Per-page copy overrides - default to the locale's generic text. */
+  serviceLabel?: string;
+  servicePlaceholder?: string;
+  notePlaceholder?: string;
+  submitLabel?: string;
+  /** Preselected dropdown option - must be one of `services`. */
+  defaultService?: string;
 }
 
 declare global {
@@ -108,9 +115,24 @@ declare global {
   }
 }
 
-export default function LeadForm({ services, source, locale = "bn" }: LeadFormProps) {
-  const t = TEXT[locale];
-  const [form, setForm] = useState<FormState>(EMPTY_FORM);
+export default function LeadForm({
+  services,
+  source,
+  locale = "bn",
+  serviceLabel,
+  servicePlaceholder,
+  notePlaceholder,
+  submitLabel,
+  defaultService = "",
+}: LeadFormProps) {
+  const t = {
+    ...TEXT[locale],
+    ...(serviceLabel && { serviceLabel }),
+    ...(servicePlaceholder && { servicePlaceholder }),
+    ...(notePlaceholder && { notePlaceholder }),
+    ...(submitLabel && { submit: submitLabel }),
+  };
+  const [form, setForm] = useState<FormState>({ ...EMPTY_FORM, service: defaultService });
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
   const [honeypot, setHoneypot] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -174,7 +196,7 @@ export default function LeadForm({ services, source, locale = "bn" }: LeadFormPr
       window.dataLayer?.push({ event: "generate_lead", lead_source: source, service: payload.service });
 
       setSubmittedName(payload.name);
-      setForm(EMPTY_FORM);
+      setForm({ ...EMPTY_FORM, service: defaultService });
     } catch (error) {
       console.error("Lead submission failed:", error);
       toast.error(t.errorTitle, { description: t.errorDescription });

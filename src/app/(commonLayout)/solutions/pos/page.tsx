@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import PosHero from "@/components/modules/Landing/Pos/PosHero";
 import {
   BeforeAfter,
-  BusinessStrip,
   DashboardInsights,
   Modules,
   PosFaqAndForm,
   PosProcess,
 } from "@/components/modules/Landing/Pos/PosSections";
+import { IndustryGrid } from "@/components/modules/Landing/Pos/PosIndustrySections";
 import { LandingPage } from "@/components/modules/Landing/shared";
 import { getSiteSettings } from "@/services/siteSetting.services";
 
@@ -25,7 +25,14 @@ export default async function PosPage() {
   return (
     <LandingPage>
       <PosHero phone={phone} />
-      <BusinessStrip />
+      <IndustryGrid
+        title={
+          <>
+            আপনার ব্যবসার ধরন অনুযায়ী <span className="text-highlight">POS</span>
+          </>
+        }
+        subtitle="প্রতিটি ব্যবসার হিসাব আলাদা। আপনার ব্যবসা বেছে নিন - দেখুন POS সেখানে কীভাবে কাজ করে।"
+      />
       <BeforeAfter />
       <Modules />
       <DashboardInsights />

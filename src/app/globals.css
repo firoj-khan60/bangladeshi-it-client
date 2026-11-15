@@ -262,6 +262,111 @@
   background: linear-gradient(115deg, oklch(0.32 0.065 162) 0%, oklch(0.2 0.04 172) 38%, oklch(0.15 0.025 195) 100%);
 }
 
+/* E-commerce category landing pages - each gets its own accent. Scoped like
+   .theme-forest: only the accent tokens change, surfaces follow light/dark. */
+.theme-fashion,
+.theme-web {
+  --primary: oklch(0.5 0.16 245);
+  --ring: oklch(0.5 0.16 245);
+  --highlight: oklch(0.5 0.16 245);
+}
+.theme-organic,
+.theme-seo {
+  --primary: oklch(0.5 0.14 142);
+  --ring: oklch(0.5 0.14 142);
+  --highlight: oklch(0.46 0.14 142);
+}
+.theme-electronics,
+.theme-apps {
+  --primary: oklch(0.5 0.22 285);
+  --ring: oklch(0.5 0.22 285);
+  --highlight: oklch(0.5 0.22 285);
+}
+.theme-skincare,
+.theme-design {
+  --primary: oklch(0.54 0.2 5);
+  --ring: oklch(0.54 0.2 5);
+  --highlight: oklch(0.52 0.2 5);
+}
+.theme-pharmacy {
+  --primary: oklch(0.5 0.09 200);
+  --ring: oklch(0.5 0.09 200);
+  --highlight: oklch(0.47 0.09 200);
+}
+.theme-hardware {
+  --primary: oklch(0.55 0.15 50);
+  --ring: oklch(0.55 0.15 50);
+  --highlight: oklch(0.52 0.15 50);
+}
+.theme-wholesale {
+  --primary: oklch(0.47 0.15 25);
+  --ring: oklch(0.47 0.15 25);
+  --highlight: oklch(0.47 0.15 25);
+}
+.theme-erp,
+.theme-software {
+  --primary: oklch(0.47 0.18 270);
+  --ring: oklch(0.47 0.18 270);
+  --highlight: oklch(0.47 0.18 270);
+}
+.theme-crm,
+.theme-marketing {
+  --primary: oklch(0.55 0.17 38);
+  --ring: oklch(0.55 0.17 38);
+  --highlight: oklch(0.52 0.17 38);
+}
+.theme-hrm,
+.theme-consulting {
+  --primary: oklch(0.5 0.1 185);
+  --ring: oklch(0.5 0.1 185);
+  --highlight: oklch(0.46 0.1 185);
+}
+.theme-social {
+  --primary: oklch(0.52 0.21 330);
+  --ring: oklch(0.52 0.21 330);
+  --highlight: oklch(0.5 0.21 330);
+}
+.dark .theme-social {
+  --highlight: oklch(0.78 0.15 330);
+}
+.dark .theme-erp,
+.dark .theme-software {
+  --highlight: oklch(0.76 0.13 275);
+}
+.dark .theme-crm,
+.dark .theme-marketing {
+  --highlight: oklch(0.79 0.14 50);
+}
+.dark .theme-hrm,
+.dark .theme-consulting {
+  --highlight: oklch(0.78 0.11 185);
+}
+.dark .theme-pharmacy {
+  --highlight: oklch(0.78 0.11 195);
+}
+.dark .theme-hardware {
+  --highlight: oklch(0.8 0.14 65);
+}
+.dark .theme-wholesale {
+  --highlight: oklch(0.76 0.13 25);
+}
+.dark .theme-fashion,
+.dark .theme-web {
+  --highlight: oklch(0.76 0.13 235);
+}
+.dark .theme-organic,
+.dark .theme-seo {
+  --highlight: oklch(0.78 0.17 140);
+}
+.dark .theme-electronics,
+.dark .theme-apps {
+  --highlight: oklch(0.76 0.14 290);
+}
+.dark .theme-skincare,
+.dark .theme-design {
+  --highlight: oklch(0.78 0.13 5);
+}
+
 /* Faint blueprint grid, faded toward the edges */
 .bg-grid {
   background-image:
