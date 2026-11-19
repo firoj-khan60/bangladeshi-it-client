@@ -122,10 +122,48 @@ export default async function BlogDetailsPage({ params }: Props) {
 
       <section className="py-16 container mx-auto px-6">
         <div className="max-w-3xl mx-auto bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-[2.5rem] p-8 md:p-12 shadow-sm">
-          <div
-            className={proseClassNames}
-            dangerouslySetInnerHTML={{ __html: blog.content }}
-          />
+          {blog.blocks?.length ? (
+            <div className={proseClassNames}>
+              {blog.blocks.map((block) => {
+                if (block.type === "heading") {
+                  const Tag = block.level === 3 ? "h3" : "h2";
+                  return <Tag key={block.id}>{block.text}</Tag>;
+                }
+                if (block.type === "text") {
+                  return (
+                    <div
+                      key={block.id}
+                      dangerouslySetInnerHTML={{ __html: block.html }}
+                    />
+                  );
+                }
+                if (!block.url) return null;
+                return (
+                  <figure key={block.id} className="my-8">
+                    <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-slate-100 dark:border-slate-800">
+                      <Image
+                        src={block.url}
+                        alt={block.caption || blog.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 720px"
+                        className="object-cover"
+                      />
+                    </div>
+                    {block.caption && (
+                      <figcaption className="mt-3 text-center text-sm text-slate-500 dark:text-slate-400">
+                        {block.caption}
+                      </figcaption>
+                    )}
+                  </figure>
+                );
+              })}
+            </div>
+          ) : (
+            <div
+              className={proseClassNames}
+              dangerouslySetInnerHTML={{ __html: blog.content }}
+            />
+          )}
         </div>
       </section>
     </div>

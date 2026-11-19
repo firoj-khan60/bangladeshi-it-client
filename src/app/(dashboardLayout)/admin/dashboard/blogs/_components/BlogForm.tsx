@@ -1,13 +1,17 @@
 "use client";
 
 import { createBlogAction, updateBlogAction } from "../_action";
-import { SimpleRichTextEditor } from "@/components/shared/form/RichTextEditor";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { IBlog, IBlogFormValues } from "@/types/blog.types";
+import { IBlog, IBlogBlock, IBlogFormValues } from "@/types/blog.types";
+import BlogBlocksEditor, {
+  createBlock,
+  EditorBlock,
+  newBlockId,
+} from "./BlogBlocksEditor";
 import { Loader2, Save, Upload, X } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -17,10 +21,20 @@ import { toast } from "sonner";
 const getInitialValues = (blog?: IBlog | null): IBlogFormValues => ({
   title: blog?.title || "",
   excerpt: blog?.excerpt || "",
-  content: blog?.content || "",
   author: blog?.author || "",
   isPublished: blog?.isPublished ?? false,
 });
+
+// Older posts only have `content` HTML - open them as a single description block.
+const getInitialBlocks = (blog?: IBlog | null): EditorBlock[] => {
+  if (blog?.blocks?.length) return blog.blocks;
+  if (blog?.content) {
+    return [{ id: newBlockId(), type: "text", html: blog.content }];
+  }
+  return [createBlock("heading"), createBlock("text")];
+};
+
+const isEmptyHtml = (html: string) => !html.replace(/<[^>]*>/g, "").trim();
 
 interface BlogFormProps {
   mode: "create" | "edit";
@@ -30,6 +44,9 @@ interface BlogFormProps {
 export default function BlogForm({ mode, blog }: BlogFormProps) {
   const router = useRouter();
   const [values, setValues] = useState<IBlogFormValues>(getInitialValues(blog));
+  const [blocks, setBlocks] = useState<EditorBlock[]>(() =>
+    getInitialBlocks(blog),
+  );
   const [isSaving, setIsSaving] = useState(false);
 
   const [coverImageFile, setCoverImageFile] = useState<File | null>(null);
@@ -72,10 +89,32 @@ export default function BlogForm({ mode, blog }: BlogFormProps) {
       toast.error("Please enter a title");
       return;
     }
-    if (!values.content.trim()) {
-      toast.error("Please write some content");
+    if (blocks.some((b) => b.type === "image" && !b.file && !b.url)) {
+      toast.error("An image block has no image - upload one or remove it");
       return;
     }
+    const hasContent = blocks.some((b) =>
+      b.type === "heading"
+        ? b.text.trim()
+        : b.type === "text"
+          ? !isEmptyHtml(b.html)
+          : true,
+    );
+    if (!hasContent) {
+      toast.error("Please add some content");
+      return;
+    }
+
+    // Strip editor-only fields; new images travel as `blockImage_<id>` files
+    const payloadBlocks: IBlogBlock[] = blocks.map((b) => {
+      if (b.type === "image") {
+        return { id: b.id, type: b.type, url: b.url, caption: b.caption };
+      }
+      if (b.type === "heading") {
+        return { id: b.id, type: b.type, text: b.text, level: b.level };
+      }
+      return { id: b.id, type: b.type, html: b.html };
+    });
 
     setIsSaving(true);
     try {
@@ -85,13 +124,18 @@ export default function BlogForm({ mode, blog }: BlogFormProps) {
         JSON.stringify({
           title: values.title,
           excerpt: values.excerpt,
-          content: values.content,
+          blocks: payloadBlocks,
           author: values.author,
           isPublished: values.isPublished,
           ...(mode === "edit" && { removeCoverImage }),
         }),
       );
       if (coverImageFile) formData.append("coverImage", coverImageFile);
+      blocks.forEach((b) => {
+        if (b.type === "image" && b.file) {
+          formData.append(`blockImage_${b.id}`, b.file);
+        }
+      });
 
       const result =
         mode === "create"
@@ -160,14 +204,7 @@ export default function BlogForm({ mode, blog }: BlogFormProps) {
           />
         </div>
 
-        <SimpleRichTextEditor
-          id="content"
-          label="Content"
-          value={values.content}
-          onChange={(html) => setValues((prev) => ({ ...prev, content: html }))}
-          placeholder="Write the blog post content..."
-          minHeight="280px"
-        />
+        <BlogBlocksEditor blocks={blocks} onChange={setBlocks} />
 
         <div className="space-y-2">
           <Label>Cover Image</Label>
